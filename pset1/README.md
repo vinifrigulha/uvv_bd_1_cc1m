@@ -1,7 +1,6 @@
 # _PSet1_
 ## Praticando o *PostgreSQL*, *MariaDB/MySQL* e *Oracle Database*
 ### Aluno: Vinícius Frigulha Ribeiro
-### Turma: CC1M
 ### Professor: Abrantes Araujo Silva Filho
 ### Monitora: Suellen Miranda Amorim
 
