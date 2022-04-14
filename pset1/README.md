@@ -9,7 +9,7 @@ Este PSet teve o objetivo de implementar o projeto lógico apresentado nos capí
 * MariaDB/MySQL; 
 * Oracle Database (este foi um desafio).
 
-Para realizar o projeto, ferramentas auxiliares serão utilizadas. São elas: 
+Para realizar o projeto, ferramentas auxiliares foram utilizadas. São elas: 
 * Oracle VM VirtualBox - onde ocorrerá a virtualização do Oracle Linux, e é onde os programas estão instalados;
 * SQL Power Architect - onde será feito o projeto lógico;
 * DBeaver - onde serão digitados os scripts dos SGBDs citados.
