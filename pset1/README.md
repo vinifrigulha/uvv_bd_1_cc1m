@@ -14,6 +14,12 @@ Para realizar o projeto, ferramentas auxiliares foram utilizadas. São elas:
 * SQL Power Architect - onde será feito o projeto lógico;
 * DBeaver - onde serão digitados os scripts dos SGBDs citados.
 
+## PostgreSQL:
+
+## MariaDB/MySQL:
+
+## Oracle Database:
+
 #### **Considerações finais:** 
 Neste PSet tive meu primeiro contato com a tecnologia Git e GitHub, além de aprender a fazer esta documentação com a linguagem de marcação Markdown.
 Também foi inédita a utilização do PostgreSQL e do Oracle Database, o que tornou este projeto mais desafiante.
