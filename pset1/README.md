@@ -18,6 +18,14 @@ Para realizar o projeto, ferramentas auxiliares foram utilizadas. São elas:
 
 ## MariaDB/MySQL:
 
+A primeira coisa a ser feita é abrir o terminal do Oracle Linux e entrar no usuário `root` do MariaDB:
+
+![Login root MySQL](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/root-mysql.PNG "Login root MySQL")
+
+Depois de acessado, o usuário `root` será responsável por criar o Banco de Dados `uvv` e o usuário `vinicius`, que irá trabalhar nesse Banco de Dados. Após isso, digitamos *exit* para sairmos do usuário `root`.
+
+![Criação do BD uvv]("Criação do BD uvv")
+
 ## Oracle Database:
 
 #### **Considerações finais:** 
