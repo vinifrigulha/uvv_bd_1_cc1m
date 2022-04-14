@@ -1,18 +1,29 @@
-# _PSet1_
+# PSet1
 ## Praticando o *PostgreSQL*, *MariaDB/MySQL* e *Oracle Database*
+
 ### Aluno: Vinícius Frigulha Ribeiro
 ### Professor: Abrantes Araujo Silva Filho
 ### Monitora: Suellen Miranda Amorim
 
-Este PSet teve o objetivo de implementar o projeto lógico apresentado nos capítulos 5 e 6 do livro _Sistemas de Banco de Dados_, 7ª edição, dos autores **Elmasri & Navathe**, nos Sistemas de Gerenciamento de Banco de Dados (SGBDs) abaixo:
+##
+
+### Introdução:
+
+Este PSet teve o objetivo de implementar o projeto lógico (esquematizado abaixo) apresentado nos capítulos 5 e 6 do livro _Sistemas de Banco de Dados_, 7ª edição, dos autores **Elmasri & Navathe**, nos seguintes Sistemas de Gerenciamento de Banco de Dados (SGBDs):
 * PostgreSQL; 
 * MariaDB/MySQL; 
 * Oracle Database (este foi um desafio).
+
+![Projeto Lógico](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/sql-p-a.PNG "Projeto Lógico - Elmasri")
+
+>**OBS:** Como foi feita uma tradução da linguagem original desse livro para o português, foi necessário alterar a precisão do campo `funcionario.endereco` de *varchar(30)* para *varchar(50)* para que os dados fossem corretamente preenchidos.
 
 Para realizar o projeto, ferramentas auxiliares foram utilizadas. São elas: 
 * Oracle VM VirtualBox - onde ocorrerá a virtualização do Oracle Linux, que é onde os programas estão instalados;
 * SQL Power Architect - onde será feito o projeto lógico;
 * DBeaver - onde serão digitados os scripts dos SGBDs citados.
+
+##
 
 ## PostgreSQL:
 
@@ -33,6 +44,8 @@ Agora realizaremos o login do usuário `vinicius`. O comando é bem parecido, ba
 ![Login do vinicius](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/vinicius-mysql.PNG "Login do vinicius")
 
 Depois de logado, basta executar o comando abaixo para ler o script do MariaDB:
+
+##
 
 ## Oracle Database:
 
