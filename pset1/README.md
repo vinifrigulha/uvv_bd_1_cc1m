@@ -24,11 +24,15 @@ A primeira coisa a ser feita é abrir o terminal do Oracle Linux e entrar no usu
 
 Depois do login, o usuário `root` será responsável por criar o Banco de Dados `uvv` e o usuário `vinicius`, concedendo a ele todos os privilégios para trabalhar nesse BD. Após isso, digitamos *exit* para sairmos do usuário `root`.
 
-![Criação do BD uvv](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/root2-mysql.PNG "Criação do BD uvv")
+![Comandos do root](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/root2-mysql.PNG "Comandos do root")
 
-Agora realizaremos o login do usuário `vinicius`. O comando é bem parecido, basta trocar *root* por *vinicius* no primeiro comando:
+OBS: Em `uvv.*` definimos o banco de dados que o usuário terá seus privilégios, que é o `uvv`, além das tabelas que ele poderá trabalhar, representado pelo `*`, que significa todas as tabelas.
 
+Agora realizaremos o login do usuário `vinicius`. O comando é bem parecido, basta trocar *root* por *vinicius* na primeira linha:
 
+![Login do vinicius](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/vinicius-mysql.PNG "Login do vinicius")
+
+Depois de logado, basta executar o comando abaixo para ler o script do MariaDB:
 
 ## Oracle Database:
 
