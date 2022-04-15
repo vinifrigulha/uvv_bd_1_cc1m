@@ -1,4 +1,5 @@
 /*Primeiramente irei criar a estrutura do schema "elmasri", criando as tabelas e as relações, que foram estabelecidas no projeto lógico.*/
+
 CREATE TABLE funcionario (
                 cpf CHAR(11) NOT NULL,
                 primeiro_nome VARCHAR(15) NOT NULL,
@@ -152,8 +153,10 @@ NOT DEFERRABLE;
 /* Começarei inserindo os dados da tabela "funcionario".
  * Para isso, foi necessário estabelecer uma ordem, pois quando inserimos um funcionário que não seja um supervisor, 
  * é-nos acusado um erro de integridade.*/
+
 INSERT INTO funcionario VALUES
 (88866555576, 'Jorge', 'E', 'Brito', '1937-11-10', 'Rua do Horto, 35, São Paulo, SP', 'M', 55000, 88866555576, 1),
+
 /*OBS: Diferentemente do dado funcionario.cpf_supervisor do modelo do Elmasri, não é possível inserir um dado nulo aqui.
  * Para contornar essa situação, percebendo que ele é o "supervisor dos supervisores", tive a ideia de colocar o seu próprio cpf nesse campo.*/
 
@@ -161,23 +164,27 @@ INSERT INTO funcionario VALUES
  * ou um supervisor e seus supervisionados e depois o outro supervisor e seus supervisionados, como foi feito aqui:*/
 
 /*Cadastro do supervisor "Fernando" e depois dos seus supervisionados*/
+
 (33344555587, 'Fernando', 'T', 'Wong', '1955-12-08', 'Rua da Lapa, 34, São Paulo, SP', 'M', 40000, 88866555576, 5),
 (12345678966, 'João', 'B', 'Silva', '1965-01-09', 'Rua das Flores, 751, São Paulo, SP', 'M', 30000, 33344555587, 5),
 (66688444476, 'Ronaldo', 'K', 'Lima', '1962-09-15', 'Rua Rebouças, 65, Piracicaba, SP', 'M', 38000, 33344555587, 5),
 (45345345376, 'Joice', 'A', 'Leite', '1972-07-31', 'Av. Lucas Obes, 74, São Paulo, SP', 'F', 25000, 33344555587, 5),
 
 /*Cadastro da supervisora "Jennifer" e depois dos seus supervisionados*/
+
 (98765432168, 'Jennifer', 'S', 'Souza', '1941-06-20', 'Av. Arthur de Lima, 54, Santo André, SP', 'F', 43000, 88866555576, 4),
 (99988777767, 'Alice', 'J', 'Zelaya', '1968-01-19', 'Rua Souza Lima, 35, Curitiba, PR', 'F', 25000, 98765432168, 4),
 (98798798733, 'André', 'V', 'Pereira', '1969-03-29', 'Rua Timbira, 35, São Paulo, SP', 'M', 25000, 98765432168, 4);
 
 /*Com os funcionários cadastrados, agora é possível direcioná-los para os seus departamentos*/
+
 INSERT INTO departamento VALUES
 (1, 'Matriz', 88866555576, '1981-06-19'),
 (5, 'Pesqusia', 33344555587, '1988-05-22'),
 (4, 'Administração', 98765432168, '1995-01-01');
 
 /*Com os dados de "departamento" cadastrados, cadastraremos as localizações deles*/
+
 INSERT INTO localizacoes_departamento VALUES
 (1, 'São Paulo'),
 (4, 'Mauá'),
@@ -186,6 +193,7 @@ INSERT INTO localizacoes_departamento VALUES
 (5, 'São Paulo');
 
 /*Ainda como consequência dos dados da tabela "departamento" cadastrados, é possível cadastrar os dados da tabela "projeto"*/
+
 INSERT INTO projeto VALUES
 (1, 'ProdutoX', 'Santo André', 5),
 (2, 'ProdutoY', 'Itu', 5),
@@ -195,6 +203,7 @@ INSERT INTO projeto VALUES
 (30, 'Novosbenefícios', 'Mauá', 4);
 
 /*Como consequência dos dados da tabela "funcionario" cadastrados, já é possível cadastrar os dados de "dependente"*/
+
 INSERT INTO dependente VALUES
 (33344555587, 'Alicia', 'F', '1986-04-05', 'Filha'),
 (33344555587, 'Tiago', 'M', '1983-10-25', 'Filho'),
@@ -205,6 +214,7 @@ INSERT INTO dependente VALUES
 (12345678966, 'Elizabeth', 'F', '1967-05-05', 'Esposa');
 
 /*Por fim, inserimos os dados da última tabela do projeto lógico.*/
+
 INSERT INTO trabalha_em VALUES
 (12345678966, 1, 32.5),
 (12345678966, 2, 7.5),
@@ -222,5 +232,6 @@ INSERT INTO trabalha_em VALUES
 (98765432168, 30, 20),
 (98765432168, 20, 15),
 (88866555576, 20, 0);
+
 /*Aqui também foi feita uma adpatação do campo "trabalha_em.horas" do último funcionário, que é o "Jorge".
 No Elmasri temos NULL, mas como a restrição é NOT NULL, inseri 0, permitindo concluir o exercício.*/
