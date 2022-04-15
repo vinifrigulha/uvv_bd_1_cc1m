@@ -222,3 +222,5 @@ INSERT INTO trabalha_em VALUES
 (98765432168, 30, 20),
 (98765432168, 20, 15),
 (88866555576, 20, 0);
+/*Aqui também foi feita uma adpatação do campo "trabalha_em.horas" do último funcionário, que é o "Jorge".
+No Elmasri temos NULL, mas como a restrição é NOT NULL, inseri 0, permitindo concluir o exercício.*/
