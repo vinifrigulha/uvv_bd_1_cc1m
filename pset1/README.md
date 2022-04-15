@@ -29,7 +29,24 @@ Já dentro do ambiente virtual, inicio este PSet construindo o projeto lógico d
 
 >**OBS:** Como foi feita uma tradução da linguagem original desse livro para o português, foi necessário alterar a precisão do campo `funcionario.endereco` de *varchar(30)* para *varchar(50)* para que os dados fossem corretamente preenchidos.
 
-Concluído o projeto lógico, basta salvarmos os scripts para cada um dos SGBDs que utilizaremos, conforme as imagens a seguir:
+Concluído o projeto lógico, basta salvarmos os scripts para cada um dos SGBDs que utilizaremos clicando no botão no canto superior esquerdo das imagens a seguir:
+
+**PostgreSQL:**
+
+![Script do PostgreSQL](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/postgres-architect.PNG "Script do PostgreSQL")
+
+>**OBS:** Já na hora de salvar, defina o *schema* como `elmasri` isso irá nos poupar alguns comandos no *DBeaver*.
+
+**MariaDB/MySQL:**
+
+![Script do MariaDB/MySQL](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/mysql-architect.PNG "Script do MariaDB/MySQL")
+
+**Oracle Database:**
+
+![Script do Oracle Database](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/oracle-architect.PNG "Script do Oracle Database")
+>**OBS:** Assim como no PostgreSQL, já defina o *schema* como `elmasri`.
+
+Aqui terminamos de trabalhar com o *SQL Power Architect*.
 
 ##
 
