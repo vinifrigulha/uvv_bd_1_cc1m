@@ -1,6 +1,6 @@
 
 CREATE TABLE funcionario (
-                New_Table CHAR(11) NOT NULL,
+                cpf CHAR(11) NOT NULL,
                 primeiro_nome VARCHAR(15) NOT NULL,
                 nome_meio CHAR(1),
                 ultimo_nome VARCHAR(15) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE funcionario (
                 salario DECIMAL(10,2),
                 cpf_supervisor CHAR(11) NOT NULL,
                 numero_departamento INT NOT NULL,
-                PRIMARY KEY (New_Table)
+                PRIMARY KEY (cpf)
 );
 
 ALTER TABLE funcionario COMMENT 'Criação da tabela "funcionario"';
@@ -79,25 +79,25 @@ ALTER TABLE dependente COMMENT 'Criação da tabela "dependente".';
 
 ALTER TABLE dependente ADD CONSTRAINT funcionario_dependente_fk
 FOREIGN KEY (cpf_funcionario)
-REFERENCES funcionario (New_Table)
+REFERENCES funcionario (cpf)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 ALTER TABLE trabalha_em ADD CONSTRAINT funcionario_trabalha_em_fk
 FOREIGN KEY (cpf_funcionario)
-REFERENCES funcionario (New_Table)
+REFERENCES funcionario (cpf)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 ALTER TABLE departamento ADD CONSTRAINT funcionario_departamento_fk
 FOREIGN KEY (cpf_gerente)
-REFERENCES funcionario (New_Table)
+REFERENCES funcionario (cpf)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 ALTER TABLE funcionario ADD CONSTRAINT funcionario_funcionario_fk
 FOREIGN KEY (cpf_supervisor)
-REFERENCES funcionario (New_Table)
+REFERENCES funcionario (cpf)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
