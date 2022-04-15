@@ -1,6 +1,6 @@
 
 CREATE TABLE elmasri.funcionario (
-                New_Table CHAR(11) NOT NULL,
+                cpf CHAR(11) NOT NULL,
                 primeiro_nome VARCHAR2(15) NOT NULL,
                 nome_meio CHAR(1),
                 ultimo_nome VARCHAR2(15) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE elmasri.funcionario (
                 salario NUMBER(10,2),
                 cpf_supervisor CHAR(11) NOT NULL,
                 numero_departamento NUMBER NOT NULL,
-                CONSTRAINT PK_FUNCIONARIO PRIMARY KEY (New_Table)
+                CONSTRAINT PK_FUNCIONARIO PRIMARY KEY (cpf)
 );
 COMMENT ON TABLE elmasri.funcionario IS 'Criação da tabela "funcionario"';
 
@@ -73,22 +73,22 @@ COMMENT ON TABLE elmasri.dependente IS 'Criação da tabela "dependente".';
 
 ALTER TABLE elmasri.dependente ADD CONSTRAINT FUNCIONARIO_DEPENDENTE_FK
 FOREIGN KEY (cpf_funcionario)
-REFERENCES elmasri.funcionario (New_Table)
+REFERENCES elmasri.funcionario (cpf)
 NOT DEFERRABLE;
 
 ALTER TABLE elmasri.trabalha_em ADD CONSTRAINT FUNCIONARIO_TRABALHA_EM_FK
 FOREIGN KEY (cpf_funcionario)
-REFERENCES elmasri.funcionario (New_Table)
+REFERENCES elmasri.funcionario (cpf)
 NOT DEFERRABLE;
 
 ALTER TABLE elmasri.departamento ADD CONSTRAINT FUNCIONARIO_DEPARTAMENTO_FK
 FOREIGN KEY (cpf_gerente)
-REFERENCES elmasri.funcionario (New_Table)
+REFERENCES elmasri.funcionario (cpf)
 NOT DEFERRABLE;
 
 ALTER TABLE elmasri.funcionario ADD CONSTRAINT FUNCIONARIO_FUNCIONARIO_FK
 FOREIGN KEY (cpf_supervisor)
-REFERENCES elmasri.funcionario (New_Table)
+REFERENCES elmasri.funcionario (cpf)
 NOT DEFERRABLE;
 
 ALTER TABLE elmasri.projeto ADD CONSTRAINT DEPARTAMENTO_PROJETO_FK
