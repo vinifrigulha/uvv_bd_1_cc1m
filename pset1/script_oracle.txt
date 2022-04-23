@@ -28,8 +28,7 @@ CREATE TABLE funcionario (
 		-- Para conseguir inserir o endereço completo, tive que aumentar a precisão de 30 para 50 do campo endereco 
                 sexo CHAR(1),
                 salario NUMBER(10,2),
-                cpf_supervisor CHAR(11), 
-		-- Para conseguir inserir funcionario.cpf_supervisor do funcionário Jorge como NULL tive que retirar a restrição NOT NULL do projeto lógico
+                cpf_supervisor CHAR(11) NOT NULL, 
                 numero_departamento NUMBER NOT NULL,
                 CONSTRAINT PK_FUNCIONARIO PRIMARY KEY (cpf)
 );
@@ -75,8 +74,7 @@ CREATE UNIQUE INDEX projeto_idx
 CREATE TABLE trabalha_em (
                 cpf_funcionario CHAR(11) NOT NULL,
                 numero_projeto_trabalha_em NUMBER NOT NULL,
-                horas NUMBER(3,1),
-		-- Para conseguir inserir trabalha_em.horas do funcionário Jorge como NULL tive que retirar a restrição NOT NULL do projeto lógico
+                horas NUMBER(3,1) NOT NULL,
                 CONSTRAINT PK_TRABALHA_EM PRIMARY KEY (cpf_funcionario, numero_projeto_trabalha_em)
 );
 COMMENT ON TABLE trabalha_em IS 'Criação da tabela "trabalha_em"';
@@ -130,7 +128,9 @@ NOT DEFERRABLE;
 
 /* INSERÇÃO DOS DADOS: */
 
-INSERT INTO funcionario VALUES (88866555576, 'Jorge', 'E', 'Brito', DATE'1937-11-10', 'Rua do Horto, 35, Sao Paulo, SP', 'M', 55000, NULL, 1);
+INSERT INTO funcionario VALUES (88866555576, 'Jorge', 'E', 'Brito', DATE'1937-11-10', 'Rua do Horto, 35, Sao Paulo, SP', 'M', 55000, 88866555576, 1);
+/* Jorge é inserido primeiro, pois é o "supervisor dos supervisores", logo seu CPF vai ser necessário para os outros funcionários serem cadastrados.
+Além disso, para que ele fosse cadastrado, seu cpf_supervisor será igual ao seu próprio cpf, o que evita o erro de ser NULL em um campo NOT NULL. */
 INSERT INTO funcionario VALUES (33344555587, 'Fernando', 'T', 'Wong', DATE'1955-12-08', 'Rua da Lapa, 34, Sao Paulo, SP', 'M', 40000, 88866555576, 5); 
 -- Este foi inserido depois, pois é um supervisor
 INSERT INTO funcionario VALUES (98765432168, 'Jennifer', 'S', 'Souza', DATE'1941-06-20', 'Av. Arthur de Lima, 54, Santo Andre, SP', 'F', 43000, 88866555576, 4); 
@@ -222,8 +222,8 @@ INSERT INTO trabalha_em VALUES (98765432168, 30, 20);
 -- Depende do cadastro da Jennifer para ser inserido
 INSERT INTO trabalha_em VALUES (98765432168, 20, 15); 
 -- Depende do cadastro da Jennifer para ser inserido
-INSERT INTO trabalha_em VALUES (88866555576, 20, NULL); 
--- Depende do cadastro do Jorge para ser inserido
+INSERT INTO trabalha_em VALUES (88866555576, 20, 0); 
+/* Para preencher a última tupla, eu a adaptei para que lembrasse o NULL, logo coloquei o valor igual a 0. */
 
 /*OBS: Como não consegui inserir caracteres especiais (" ç "; " ´ "; " ~ "),
 eu os removi do projeto para não ficar visualmente feio*/
