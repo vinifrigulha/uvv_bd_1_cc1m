@@ -147,60 +147,104 @@ INSERT INTO funcionario VALUES
 (88866555576, 'Jorge', 'E', 'Brito', '1937-11-10', 'Rua do Horto, 35, São Paulo, SP', 'M', 55000, 88866555576, 1), 
 /* Jorge é inserido primeiro, pois é o "supervisor dos supervisores", logo seu CPF vai ser necessário para os outros funcionários serem cadastrados.
 Além disso, para que ele fosse cadastrado, seu cpf_supervisor será igual ao seu próprio cpf, o que evita o erro de ser NULL em um campo NOT NULL. */
-(33344555587, 'Fernando', 'T', 'Wong', '1955-12-08', 'Rua da Lapa, 34, São Paulo, SP', 'M', 40000, 88866555576, 5), -- Este foi inserido depois, pois é um supervisor
-(98765432168, 'Jennifer', 'S', 'Souza', '1941-06-20', 'Av. Arthur de Lima, 54, Santo André, SP', 'F', 43000, 88866555576, 4), -- Esta também é uma supervisora
-(12345678966, 'João', 'B', 'Silva', '1965-01-09', 'Rua das Flores, 751, São Paulo, SP', 'M', 30000, 33344555587, 5), -- Supervisionado de Fernando
-(66688444476, 'Ronaldo', 'K', 'Lima', '1962-09-15', 'Rua Rebouças, 65, Piracicaba, SP', 'M', 38000, 33344555587, 5), -- Supervisionado de Fernando
-(45345345376, 'Joice', 'A', 'Leite', '1972-07-31', 'Av. Lucas Obes, 74, São Paulo, SP', 'F', 25000, 33344555587, 5), -- Supervisionada de Fernando
-(99988777767, 'Alice', 'J', 'Zelaya', '1968-01-19', 'Rua Souza Lima, 35, Curitiba, PR', 'F', 25000, 98765432168, 4), -- Supervisionada de Jennifer
-(98798798733, 'André', 'V', 'Pereira', '1969-03-29', 'Rua Timbira, 35, São Paulo, SP', 'M', 25000, 98765432168, 4); -- Supervisionado de Jennifer
+(33344555587, 'Fernando', 'T', 'Wong', '1955-12-08', 'Rua da Lapa, 34, São Paulo, SP', 'M', 40000, 88866555576, 5), 
+-- Este foi inserido depois, pois é um supervisor
+(98765432168, 'Jennifer', 'S', 'Souza', '1941-06-20', 'Av. Arthur de Lima, 54, Santo André, SP', 'F', 43000, 88866555576, 4), 
+-- Esta também é uma supervisora
+(12345678966, 'João', 'B', 'Silva', '1965-01-09', 'Rua das Flores, 751, São Paulo, SP', 'M', 30000, 33344555587, 5), 
+-- Supervisionado de Fernando
+(66688444476, 'Ronaldo', 'K', 'Lima', '1962-09-15', 'Rua Rebouças, 65, Piracicaba, SP', 'M', 38000, 33344555587, 5), 
+-- Supervisionado de Fernando
+(45345345376, 'Joice', 'A', 'Leite', '1972-07-31', 'Av. Lucas Obes, 74, São Paulo, SP', 'F', 25000, 33344555587, 5), 
+-- Supervisionada de Fernando
+(99988777767, 'Alice', 'J', 'Zelaya', '1968-01-19', 'Rua Souza Lima, 35, Curitiba, PR', 'F', 25000, 98765432168, 4), 
+-- Supervisionada de Jennifer
+(98798798733, 'André', 'V', 'Pereira', '1969-03-29', 'Rua Timbira, 35, São Paulo, SP', 'M', 25000, 98765432168, 4); 
+-- Supervisionado de Jennifer
 
 INSERT INTO departamento VALUES
-(1, 'Matriz', 88866555576, '1981-06-19'), -- Depende do cadastro do Jorge para ser inserido
-(5, 'Pesqusia', 33344555587, '1988-05-22'), -- Depende do cadastro do Fernando para ser inserido
-(4, 'Administração', 98765432168, '1995-01-01'); -- Depende do cadastro da Jennifer para ser inserido
+(1, 'Matriz', 88866555576, '1981-06-19'), 
+-- Depende do cadastro do Jorge para ser inserido
+(5, 'Pesqusia', 33344555587, '1988-05-22'), 
+-- Depende do cadastro do Fernando para ser inserido
+(4, 'Administração', 98765432168, '1995-01-01'); 
+-- Depende do cadastro da Jennifer para ser inserido
 
 INSERT INTO localizacoes_departamento VALUES
-(1, 'São Paulo'), -- Depende do cadastro do departamento 1 para ser inserido
-(4, 'Mauá'), -- Depende do cadastro do departamento 4 para ser inserido
-(5, 'Santo André'), -- Depende do cadastro do departamento 5 para ser inserido
-(5, 'Itu'), -- Depende do cadastro do departamento 5 para ser inserido
-(5, 'São Paulo'); -- Depende do cadastro do departamento 5 para ser inserido
+(1, 'São Paulo'), 
+-- Depende do cadastro do departamento 1 para ser inserido
+(4, 'Mauá'), 
+-- Depende do cadastro do departamento 4 para ser inserido
+(5, 'Santo André'), 
+-- Depende do cadastro do departamento 5 para ser inserido
+(5, 'Itu'), 
+-- Depende do cadastro do departamento 5 para ser inserido
+(5, 'São Paulo'); 
+-- Depende do cadastro do departamento 5 para ser inserido
 
 INSERT INTO projeto VALUES
-(1, 'ProdutoX', 'Santo André', 5), -- Depende do cadastro do departamento 5 para ser inserido
-(2, 'ProdutoY', 'Itu', 5), -- Depende do cadastro do departamento 5 para ser inserido
-(3, 'ProdutoZ', 'São Paulo', 5), -- Depende do cadastro do departamento 5 para ser inserido
-(10, 'Informatização', 'Mauá', 4), -- Depende do cadastro do departamento 4 para ser inserido
-(20, 'Reorganização', 'São Paulo', 1), -- Depende do cadastro do departamento 1 para ser inserido
-(30, 'Novosbenefícios', 'Mauá', 4); -- Depende do cadastro do departamento 4 para ser inserido
+(1, 'ProdutoX', 'Santo André', 5), 
+-- Depende do cadastro do departamento 5 para ser inserido
+(2, 'ProdutoY', 'Itu', 5), 
+-- Depende do cadastro do departamento 5 para ser inserido
+(3, 'ProdutoZ', 'São Paulo', 5), 
+-- Depende do cadastro do departamento 5 para ser inserido
+(10, 'Informatização', 'Mauá', 4), 
+-- Depende do cadastro do departamento 4 para ser inserido
+(20, 'Reorganização', 'São Paulo', 1), 
+-- Depende do cadastro do departamento 1 para ser inserido
+(30, 'Novosbenefícios', 'Mauá', 4); 
+-- Depende do cadastro do departamento 4 para ser inserido
 
 INSERT INTO dependente VALUES
-(33344555587, 'Alicia', 'F', '1986-04-05', 'Filha'), -- Depende do cadastro do Fernando para ser inserido
-(33344555587, 'Tiago', 'M', '1983-10-25', 'Filho'), -- Depende do cadastro do Fernando para ser inserido
-(33344555587, 'Janaína', 'F', '1958-05-03', 'Esposa'), -- Depende do cadastro do Fernando para ser inserido
-(98765432168, 'Antonio', 'M', '1942-02-28', 'Marido'), -- Depende do cadastro da Jennifer para ser inserido
-(12345678966, 'Michael', 'M', '1988-01-04', 'Filho'), -- Depende do cadastro do João para ser inserido
-(12345678966, 'Alicia', 'F', '1988-12-30', 'Filha'), -- Depende do cadastro do João para ser inserido
-(12345678966, 'Elizabeth', 'F', '1967-05-05', 'Esposa'); -- Depende do cadastro do João para ser inserido
+(33344555587, 'Alicia', 'F', '1986-04-05', 'Filha'), 
+-- Depende do cadastro do Fernando para ser inserido
+(33344555587, 'Tiago', 'M', '1983-10-25', 'Filho'), 
+-- Depende do cadastro do Fernando para ser inserido
+(33344555587, 'Janaína', 'F', '1958-05-03', 'Esposa'), 
+-- Depende do cadastro do Fernando para ser inserido
+(98765432168, 'Antonio', 'M', '1942-02-28', 'Marido'), 
+-- Depende do cadastro da Jennifer para ser inserido
+(12345678966, 'Michael', 'M', '1988-01-04', 'Filho'), 
+-- Depende do cadastro do João para ser inserido
+(12345678966, 'Alicia', 'F', '1988-12-30', 'Filha'), 
+-- Depende do cadastro do João para ser inserido
+(12345678966, 'Elizabeth', 'F', '1967-05-05', 'Esposa'); 
+-- Depende do cadastro do João para ser inserido
 
 INSERT INTO trabalha_em VALUES
-(12345678966, 1, 32.5), -- Depende do cadastro do João para ser inserido
-(12345678966, 2, 7.5), -- Depende do cadastro do João para ser inserido
-(66688444476, 3, 40), -- Depende do cadastro do Ronaldo para ser inserido
-(45345345376, 1, 20), -- Depende do cadastro da Joice para ser inserido
-(45345345376, 2, 20), -- Depende do cadastro da Joice para ser inserido
-(33344555587, 2, 10), -- Depende do cadastro do Fernando para ser inserido
-(33344555587, 3, 10), -- Depende do cadastro do Fernando para ser inserido
-(33344555587, 10, 10), -- Depende do cadastro do Fernando para ser inserido
-(33344555587, 20, 10), -- Depende do cadastro do Fernando para ser inserido
-(99988777767, 30, 30), -- Depende do cadastro da Alice para ser inserido
-(99988777767, 10, 10), -- Depende do cadastro da Alice para ser inserido
-(98798798733, 10, 35), -- Depende do cadastro do André para ser inserido
-(98798798733, 30, 5), -- Depende do cadastro do André para ser inserido
-(98765432168, 30, 20), -- Depende do cadastro da Jennifer para ser inserido
-(98765432168, 20, 15), -- Depende do cadastro da Jennifer para ser inserido
-(88866555576, 20, 0); -- Depende do cadastro do Jorge para ser inserido
+(12345678966, 1, 32.5), 
+-- Depende do cadastro do João para ser inserido
+(12345678966, 2, 7.5), 
+-- Depende do cadastro do João para ser inserido
+(66688444476, 3, 40), 
+-- Depende do cadastro do Ronaldo para ser inserido
+(45345345376, 1, 20), 
+-- Depende do cadastro da Joice para ser inserido
+(45345345376, 2, 20), 
+-- Depende do cadastro da Joice para ser inserido
+(33344555587, 2, 10), 
+-- Depende do cadastro do Fernando para ser inserido
+(33344555587, 3, 10), 
+-- Depende do cadastro do Fernando para ser inserido
+(33344555587, 10, 10), 
+-- Depende do cadastro do Fernando para ser inserido
+(33344555587, 20, 10), 
+-- Depende do cadastro do Fernando para ser inserido
+(99988777767, 30, 30), 
+-- Depende do cadastro da Alice para ser inserido
+(99988777767, 10, 10), 
+-- Depende do cadastro da Alice para ser inserido
+(98798798733, 10, 35), 
+-- Depende do cadastro do André para ser inserido
+(98798798733, 30, 5), 
+-- Depende do cadastro do André para ser inserido
+(98765432168, 30, 20), 
+-- Depende do cadastro da Jennifer para ser inserido
+(98765432168, 20, 15), 
+-- Depende do cadastro da Jennifer para ser inserido
+(88866555576, 20, 0); 
+-- Depende do cadastro do Jorge para ser inserido
 /* Para preencher a última tupla, eu a adaptei para que lembrasse o NULL, logo coloquei o valor igual a 0. */
 
 /* TODOS OS DADOS FORAM INSERIDOS COM SUCESSO! */
