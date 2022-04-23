@@ -17,7 +17,7 @@ Este PSet teve o objetivo de implementar o projeto lógico apresentado nos capí
 Para realizar o projeto, ferramentas auxiliares foram utilizadas. São elas: 
 * Oracle VM VirtualBox - onde ocorrerá a virtualização do Oracle Linux, que é onde os programas estão instalados;
 * SQL Power Architect - onde será feito o projeto lógico; e
-* DBeaver - onde serão digitados os scripts dos SGBDs citados.
+* DBeaver - onde serão testados os scripts do projeto lógico.
 
 ##
 
@@ -29,7 +29,9 @@ Já dentro do ambiente virtual, inicio este PSet construindo o projeto lógico d
 
 >**OBS:** Como foi feita uma tradução da linguagem original desse livro para o português, foi necessário alterar a precisão do campo `funcionario.endereco` de *varchar(30)* para *varchar(50)* para que os dados fossem corretamente preenchidos.
 
-**PostgreSQL:**
+##
+
+### PostgreSQL
 
 Ainda no SQL Power Architect, basta extraírmos o script em SQL das tabelas e suas relações:
 
@@ -44,62 +46,56 @@ Começamos iniciando o Postgres, conforme a imagem abaixo.
 
 Criaremos o usuário `vinicius`, que será o responsável por trabalhar no nosso banco de dados.
 
-[Criação do usuário vinicius](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/PostgreSQL/2-psql.PNG "Criação do usuário vinicius")
+![Criação do usuário vinicius](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/PostgreSQL/2-psql.PNG "Criação do usuário vinicius")
 
 Com o usuário criado, criaremos o banco de dados `uvv`.
 
-[Criação do banco de dados uvv](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/PostgreSQL/3-psql.PNG "Criação do Banco de Dados uvv")
+![Criação do banco de dados uvv](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/PostgreSQL/3-psql.PNG "Criação do Banco de Dados uvv")
 
 Após esse processo, trocaremos para o usuário `vinicius` para que ele crie o esquema `elmasri` e o defina como padrão. 
 
-[Criação do esquema elmasri](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/PostgreSQL/4-psql.PNG "Criação do esquema elmasri")
+![Criação do esquema elmasri](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/PostgreSQL/4-psql.PNG "Criação do esquema elmasri")
 
 Chegando nesta etapa, basta inserir o script do projeto lógico, que estava no bloco de notas, e os dados de cada tabela.
 
->**OBS:** Todo esse passo a passo, inclusive as senhas utilizadas, estarão no arquivo [script-psql.txt](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/script_psql.txt)
+>**OBS:** Todo esse passo a passo, inclusive as senhas utilizadas, estarão no arquivo [script_psql.txt](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/script_psql.txt)
 
-**MariaDB/MySQL:**
+##
 
-![Script do MariaDB/MySQL](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/mysql-architect.PNG "Script do MariaDB/MySQL")
+### MariaDB/MySQL
 
-**Oracle Database:**
+Voltando ao SQL Power Architect, basta extraírmos o script em SQL das tabelas e suas relações, desta vez para o MariaDB/MySQL:
+
+![Projeto Lógico MySQL](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/MySQL/mysql-sqlpa.PNG "SQL do Projeto Lógico")
+
+Com o script extraído, novamente o guardarei no Bloco de Notas do Windows.
+
+Novamente abriremos o Terminal do Linux para começarmos a trabalhar neste SGBD. 
+Inicialmente, entraremos com o usuário `root`, que é o adinistrador do MariaDB/MySQL.
+
+![MySQL no Terminal](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/MySQL/1-mysql.PNG "MySQL no Terminal")
+
+Daí, o primeiro passo é criar o banco de dados `uvv`. 
+Logo em seguida, criaremos o usuário `vinicius` e garantiremos os privilégios para ele trabalhar no BD `uvv`:
+
+![Criação do BD uvv e do usuário vinicius](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/MySQL/2-mysql.png "Criação do BD uvv e do usuário vinicius")
+
+Com o usuário criado e configurado, trocaremos do usuário `root` para o usuário `vinicius`.
+Após isso, basta selecionar o banco de dados `uvv`.
+
+![Trocando de usuário](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/MySQL/3-mysql.png "Trocando de usuário")
+
+Com o banco de dados `uvv` selecionado, iniciaremos a inserção das tabelas e dados, similarmente ao PostgreSQL.
+
+>**OBS:** Todo esse passo a passo, inclusive as senhas utilizadas, estarão no arquivo [script_mysql.txt](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/script_mysql.txt)
+
+##
+
+### Oracle Database
 
 ![Script do Oracle Database](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/oracle-architect.PNG "Script do Oracle Database")
 >**OBS:** Assim como no PostgreSQL, já defina o *schema* como `elmasri`.
 
-Aqui terminamos de trabalhar com o *SQL Power Architect*.
-
-##
-
-### Scripts (DBeaver):
-
-##
-
-### PostgreSQL:
-
-##
-
-### MariaDB/MySQL:
-
-A primeira coisa a ser feita é abrir o terminal do Oracle Linux e entrar no usuário `root` do MariaDB pelos comandos da imagem abaixo:
-
-![Login root MySQL](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/root-mysql.PNG "Login root MySQL")
-
-Depois do login, o usuário *root* será responsável por criar o Banco de Dados `uvv` e o usuário `vinicius`, concedendo a ele todos os privilégios para trabalhar nesse BD. Após isso, digitamos *exit* para sairmos do usuário `root`.
-
-![Comandos do root](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/root2-mysql.PNG "Comandos do root")
-
->**OBS:** Em `uvv.*` definimos o Banco de Dados que o usuário terá seus privilégios, que é o BD `uvv`, além das tabelas que ele poderá trabalhar, representado pelo `*`, que significa todas as tabelas.
-
-Agora realizaremos o login do usuário `vinicius`. O comando é bem parecido, basta trocar *root* por *vinicius* na primeira linha:
-
-![Login do vinicius](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/vinicius-mysql.PNG "Login do vinicius")
-
-Depois de logado, basta executar o comando abaixo para ler o script do MariaDB, feito no *DBeaver*:
-
-##
-
-### Oracle Database:
 
 ##
 
