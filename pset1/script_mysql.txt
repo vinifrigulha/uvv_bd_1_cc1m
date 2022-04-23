@@ -26,7 +26,7 @@ CREATE TABLE funcionario (
                 ultimo_nome VARCHAR(15) NOT NULL,
                 data_nascimento DATE,
                 endereco VARCHAR(50),
-		-- Para conseguir inserir o endereço completo, tive que aumentar a precisão de 30 para 50 do campo endereco
+/* Para conseguir inserir o endereço completo, tive que aumentar a precisão de 30 para 50 do campo endereco */
                 sexo CHAR(1),
                 salario DECIMAL(10,2),
                 cpf_supervisor CHAR(11) NOT NULL,
