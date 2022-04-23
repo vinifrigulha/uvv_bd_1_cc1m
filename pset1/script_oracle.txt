@@ -222,7 +222,8 @@ INSERT INTO trabalha_em VALUES (98765432168, 30, 20);
 -- Depende do cadastro da Jennifer para ser inserido
 INSERT INTO trabalha_em VALUES (98765432168, 20, 15); 
 -- Depende do cadastro da Jennifer para ser inserido
-INSERT INTO trabalha_em VALUES (88866555576, 20, 0); 
+INSERT INTO trabalha_em VALUES (88866555576, 20, 0);
+-- Depende do cadastro do Jorge para ser inserido
 /* Para preencher a última tupla, eu a adaptei para que lembrasse o NULL, logo coloquei o valor igual a 0. */
 
 /*OBS: Como não consegui inserir caracteres especiais (" ç "; " ´ "; " ~ "),
