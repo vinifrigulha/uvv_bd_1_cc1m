@@ -36,11 +36,11 @@ Ainda no SQL Power Architect, basta extrairmos o script em SQL das tabelas e sua
 
 ![Projeto Lógico PSQL](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/PostgreSQL/psql-sqlpa.PNG "SQL do Projeto Lógico")
 
-Com o script extraído, basta copiar e colar em algum lugar - no meu caso, eu colei no Bloco de Notas no Windows (fora da máquina vitual).
+Com o script extraído, basta copiar e colar em algum lugar - no meu caso, eu colei no Bloco de Notas no Windows (fora da máquina virtual).
 
 Agora, partiremos para o Terminal do Linux para configurarmos o usuário, o banco de dados e o esquema.
 
-Começamos iniciando o Postgres, conforme a imagem abaixo.
+Começaremos iniciando o Postgres, conforme a imagem abaixo.
 
 ![PSQL no Terminal](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/PostgreSQL/1-psql.PNG "PSQL no Terminal")
 
@@ -56,7 +56,7 @@ Após esse processo, trocaremos para o usuário `vinicius` para que ele crie o e
 
 ![Criação do esquema elmasri](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/PostgreSQL/4-psql.PNG "Criação do esquema elmasri")
 
-Chegando nesta etapa, basta inserir o script do projeto lógico, que estava no bloco de notas, e os dados de cada tabela.
+Chegando nesta etapa, basta inserir o script do projeto lógico, que estava no bloco de notas, e os dados de cada tabela, finalizando a implementação no PostgreSQL.
 
 >**OBS:** Todo esse passo a passo, inclusive as senhas utilizadas, estarão no arquivo [script_psql.txt](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/script_psql.txt)
 
@@ -64,13 +64,13 @@ Chegando nesta etapa, basta inserir o script do projeto lógico, que estava no b
 
 ### MariaDB/MySQL
 
-Voltando ao SQL Power Architect, basta extraírmos o script em SQL das tabelas e suas relações, desta vez para o MariaDB/MySQL:
+Voltando ao SQL Power Architect, basta extrairmos o script em SQL das tabelas e suas relações, desta vez para o MariaDB/MySQL:
 
 ![Projeto Lógico MySQL](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/MySQL/mysql-sqlpa.PNG "SQL do Projeto Lógico")
 
 Com o script extraído, novamente o guardarei no Bloco de Notas do Windows.
 
-Novamente abriremos o Terminal do Linux para começarmos a trabalhar neste SGBD. 
+Mais uma vez abriremos o Terminal do Linux para começarmos a trabalhar neste SGBD. 
 Inicialmente, entraremos com o usuário `root`, que é o adinistrador do MariaDB/MySQL.
 
 ![MySQL no Terminal](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/MySQL/1-mysql.PNG "MySQL no Terminal")
@@ -85,7 +85,7 @@ Após isso, basta selecionar o banco de dados `uvv`.
 
 ![Trocando de usuário](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/MySQL/3-mysql.png "Trocando de usuário")
 
-Com o banco de dados `uvv` selecionado, iniciaremos a inserção das tabelas e dados, similarmente ao PostgreSQL.
+Com o banco de dados `uvv` selecionado, iniciaremos a inserção das tabelas e dados, similarmente ao PostgreSQL, finalizando a implementação no MariaDB/MySQL.
 
 >**OBS:** Todo esse passo a passo, inclusive as senhas utilizadas, estarão no arquivo [script_mysql.txt](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/script_mysql.txt)
 
@@ -93,7 +93,7 @@ Com o banco de dados `uvv` selecionado, iniciaremos a inserção das tabelas e d
 
 ### Oracle Database
 
-Como foi feito até o momento, iniciaremos estraindo o script do projeto lógico no SQL Power Architect.
+Como foi feito até o momento, iniciaremos extraindo o script do projeto lógico no SQL Power Architect.
 
 ![Script do Oracle Database](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/Oracle/oracle-sqlpa.PNG "Script do Oracle Database")
 
@@ -104,7 +104,7 @@ Assim, começaremos iniciando o Terminal do Linux como usuário administrativo e
 
 Aqui, ao contrário dos outros SGBDs, não será necessário criar um banco de dados, nem mesmo um esquema, apenas o usuário.
 
-Patindo para a criação do usuário e suas configurações, digitaremos estes comandos abaixo.
+Partindo para a criação do usuário e suas configurações, digitaremos estes comandos abaixo.
 
 ![Criação do usuário vinicius](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/Oracle/2-oracle.PNG "Criação do usuário vinicius")
 
@@ -112,7 +112,7 @@ Com o usuário criado, basta conectarmos a ele:
 
 ![Conexão ao usuário vinicius](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/Oracle/3-oracle.PNG "Conexão ao usuário vinicius")
 
-Chegando aqui, iniciaremos a criação das tabelas e as inserções dos dados.
+Chegando aqui, iniciaremos a criação das tabelas e a inserção dos dados, finalizando a implementação no Oracle Database.
 
 >**OBS:** Todo esse passo a passo, inclusive as senhas utilizadas, estarão no arquivo [script_oracle.txt](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/script_oracle.txt)
 
