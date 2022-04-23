@@ -1,0 +1,206 @@
+# LOGIN DO USUÁRIO ROOT:
+mysql -u root -p
+computacao@raiz
+
+# CRIAÇÃO DO BANCO DE DADOS uvv:
+create database uvv
+character set UTF8mb4
+collate utf8mb4_bin;
+
+# CRIAÇÃO DO USUÁRIO vinicius:
+create user vinicius identified by '123456';
+grant all privileges on uvv.* to vinicius;
+
+
+# TROCANDO DO USUÁRIO ROOT PARA O vinicius:
+system mysql -u vinicius -p
+123456
+
+# ATIVANDO O BANCO DE DADOS uvv:
+use uvv;
+
+/* CRIAÇÃO DAS TABELAS */
+CREATE TABLE funcionario (
+                cpf CHAR(11) NOT NULL,
+                primeiro_nome VARCHAR(15) NOT NULL,
+                nome_meio CHAR(1),
+                ultimo_nome VARCHAR(15) NOT NULL,
+                data_nascimento DATE,
+                endereco VARCHAR(50),
+		-- Para conseguir inserir o endereço completo, tive que aumentar a precisão de 30 para 50 do campo endereco
+                sexo CHAR(1),
+                salario DECIMAL(10,2),
+                cpf_supervisor CHAR(11),
+		-- Para conseguir inserir funcionario.cpf_supervisor do funcionário Jorge como NULL tive que retirar a restrição NOT NULL do projeto lógico
+                numero_departamento INT NOT NULL,
+                PRIMARY KEY (cpf)
+);
+
+ALTER TABLE funcionario COMMENT 'Criação da tabela "funcionario"';
+
+
+CREATE TABLE departamento (
+                numero_departamento INT NOT NULL,
+                nome_departamento VARCHAR(15) NOT NULL,
+                cpf_gerente CHAR(11) NOT NULL,
+                data_inicio_gerente DATE,
+                PRIMARY KEY (numero_departamento)
+);
+
+ALTER TABLE departamento COMMENT 'Criação da tabela "departamento"';
+
+
+CREATE UNIQUE INDEX departamento_idx
+ ON departamento
+ ( nome_departamento );
+
+CREATE TABLE  localizacoes_departamento (
+                numero_departamento INT NOT NULL,
+                local VARCHAR(15) NOT NULL,
+                PRIMARY KEY (numero_departamento, local)
+);
+
+ALTER TABLE  localizacoes_departamento COMMENT 'Criação da tabela "localizacoes_departamento".';
+
+
+CREATE TABLE projeto (
+                numero_projeto INT NOT NULL,
+                nome_projeto VARCHAR(15) NOT NULL,
+                local_projeto VARCHAR(15),
+                numero_departamento INT NOT NULL,
+                PRIMARY KEY (numero_projeto)
+);
+
+ALTER TABLE projeto COMMENT 'Criação da tabela "projeto".';
+
+
+CREATE UNIQUE INDEX projeto_idx
+ ON projeto
+ ( nome_projeto );
+
+CREATE TABLE trabalha_em (
+                cpf_funcionario CHAR(11) NOT NULL,
+                numero_projeto_trabalha_em INT NOT NULL,
+                horas DECIMAL(3,1),
+		-- Para conseguir inserir trabalha_em.horas do funcionário Jorge como NULL tive que retirar a restrição NOT NULL do projeto lógico
+                PRIMARY KEY (cpf_funcionario, numero_projeto_trabalha_em)
+);
+
+ALTER TABLE trabalha_em COMMENT 'Criação da tabela "trabalha_em"';
+
+
+CREATE TABLE dependente (
+                cpf_funcionario CHAR(11) NOT NULL,
+                nome_dependente VARCHAR(15) NOT NULL,
+                sexo CHAR(1),
+                data_nascimento DATE,
+                parentesco VARCHAR(15),
+                PRIMARY KEY (cpf_funcionario, nome_dependente)
+);
+
+ALTER TABLE dependente COMMENT 'Criação da tabela "dependente".';
+
+
+ALTER TABLE dependente ADD CONSTRAINT funcionario_dependente_fk
+FOREIGN KEY (cpf_funcionario)
+REFERENCES funcionario (cpf)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE trabalha_em ADD CONSTRAINT funcionario_trabalha_em_fk
+FOREIGN KEY (cpf_funcionario)
+REFERENCES funcionario (cpf)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE departamento ADD CONSTRAINT funcionario_departamento_fk
+FOREIGN KEY (cpf_gerente)
+REFERENCES funcionario (cpf)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE funcionario ADD CONSTRAINT funcionario_funcionario_fk
+FOREIGN KEY (cpf_supervisor)
+REFERENCES funcionario (cpf)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE projeto ADD CONSTRAINT departamento_projeto_fk
+FOREIGN KEY (numero_departamento)
+REFERENCES departamento (numero_departamento)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE  localizacoes_departamento ADD CONSTRAINT departamento_localizacoes_departamento_fk
+FOREIGN KEY (numero_departamento)
+REFERENCES departamento (numero_departamento)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE trabalha_em ADD CONSTRAINT projeto_trabalha_em_fk
+FOREIGN KEY (numero_projeto_trabalha_em)
+REFERENCES projeto (numero_projeto)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+/* INSERÇÃO DOS DADOS */
+
+INSERT INTO funcionario VALUES
+(88866555576, 'Jorge', 'E', 'Brito', '1937-11-10', 'Rua do Horto, 35, São Paulo, SP', 'M', 55000, NULL, 1), 
+-- Jorge é inserido primeiro, pois é o "supervisor dos supervisores", logo seu CPF vai ser necessário para os outros funcionários serem cadastrados
+(33344555587, 'Fernando', 'T', 'Wong', '1955-12-08', 'Rua da Lapa, 34, São Paulo, SP', 'M', 40000, 88866555576, 5), -- Este foi inserido depois, pois é um supervisor
+(98765432168, 'Jennifer', 'S', 'Souza', '1941-06-20', 'Av. Arthur de Lima, 54, Santo André, SP', 'F', 43000, 88866555576, 4), -- Esta também é uma supervisora
+(12345678966, 'João', 'B', 'Silva', '1965-01-09', 'Rua das Flores, 751, São Paulo, SP', 'M', 30000, 33344555587, 5), -- Supervisionado de Fernando
+(66688444476, 'Ronaldo', 'K', 'Lima', '1962-09-15', 'Rua Rebouças, 65, Piracicaba, SP', 'M', 38000, 33344555587, 5), -- Supervisionado de Fernando
+(45345345376, 'Joice', 'A', 'Leite', '1972-07-31', 'Av. Lucas Obes, 74, São Paulo, SP', 'F', 25000, 33344555587, 5), -- Supervisionada de Fernando
+(99988777767, 'Alice', 'J', 'Zelaya', '1968-01-19', 'Rua Souza Lima, 35, Curitiba, PR', 'F', 25000, 98765432168, 4), -- Supervisionada de Jennifer
+(98798798733, 'André', 'V', 'Pereira', '1969-03-29', 'Rua Timbira, 35, São Paulo, SP', 'M', 25000, 98765432168, 4); -- Supervisionado de Jennifer
+
+INSERT INTO departamento VALUES
+(1, 'Matriz', 88866555576, '1981-06-19'), -- Depende do cadastro do Jorge para ser inserido
+(5, 'Pesqusia', 33344555587, '1988-05-22'), -- Depende do cadastro do Fernando para ser inserido
+(4, 'Administração', 98765432168, '1995-01-01'); -- Depende do cadastro da Jennifer para ser inserido
+
+INSERT INTO localizacoes_departamento VALUES
+(1, 'São Paulo'), -- Depende do cadastro do departamento 1 para ser inserido
+(4, 'Mauá'), -- Depende do cadastro do departamento 4 para ser inserido
+(5, 'Santo André'), -- Depende do cadastro do departamento 5 para ser inserido
+(5, 'Itu'), -- Depende do cadastro do departamento 5 para ser inserido
+(5, 'São Paulo'); -- Depende do cadastro do departamento 5 para ser inserido
+
+INSERT INTO projeto VALUES
+(1, 'ProdutoX', 'Santo André', 5), -- Depende do cadastro do departamento 5 para ser inserido
+(2, 'ProdutoY', 'Itu', 5), -- Depende do cadastro do departamento 5 para ser inserido
+(3, 'ProdutoZ', 'São Paulo', 5), -- Depende do cadastro do departamento 5 para ser inserido
+(10, 'Informatização', 'Mauá', 4), -- Depende do cadastro do departamento 4 para ser inserido
+(20, 'Reorganização', 'São Paulo', 1), -- Depende do cadastro do departamento 1 para ser inserido
+(30, 'Novosbenefícios', 'Mauá', 4); -- Depende do cadastro do departamento 4 para ser inserido
+
+INSERT INTO dependente VALUES
+(33344555587, 'Alicia', 'F', '1986-04-05', 'Filha'), -- Depende do cadastro do Fernando para ser inserido
+(33344555587, 'Tiago', 'M', '1983-10-25', 'Filho'), -- Depende do cadastro do Fernando para ser inserido
+(33344555587, 'Janaína', 'F', '1958-05-03', 'Esposa'), -- Depende do cadastro do Fernando para ser inserido
+(98765432168, 'Antonio', 'M', '1942-02-28', 'Marido'), -- Depende do cadastro da Jennifer para ser inserido
+(12345678966, 'Michael', 'M', '1988-01-04', 'Filho'), -- Depende do cadastro do João para ser inserido
+(12345678966, 'Alicia', 'F', '1988-12-30', 'Filha'), -- Depende do cadastro do João para ser inserido
+(12345678966, 'Elizabeth', 'F', '1967-05-05', 'Esposa'); -- Depende do cadastro do João para ser inserido
+
+INSERT INTO trabalha_em VALUES
+(12345678966, 1, 32.5), -- Depende do cadastro do João para ser inserido
+(12345678966, 2, 7.5), -- Depende do cadastro do João para ser inserido
+(66688444476, 3, 40), -- Depende do cadastro do Ronaldo para ser inserido
+(45345345376, 1, 20), -- Depende do cadastro da Joice para ser inserido
+(45345345376, 2, 20), -- Depende do cadastro da Joice para ser inserido
+(33344555587, 2, 10), -- Depende do cadastro do Fernando para ser inserido
+(33344555587, 3, 10), -- Depende do cadastro do Fernando para ser inserido
+(33344555587, 10, 10), -- Depende do cadastro do Fernando para ser inserido
+(33344555587, 20, 10), -- Depende do cadastro do Fernando para ser inserido
+(99988777767, 30, 30), -- Depende do cadastro da Alice para ser inserido
+(99988777767, 10, 10), -- Depende do cadastro da Alice para ser inserido
+(98798798733, 10, 35), -- Depende do cadastro do André para ser inserido
+(98798798733, 30, 5), -- Depende do cadastro do André para ser inserido
+(98765432168, 30, 20), -- Depende do cadastro da Jennifer para ser inserido
+(98765432168, 20, 15), -- Depende do cadastro da Jennifer para ser inserido
+(88866555576, 20, NULL); -- Depende do cadastro do Jorge para ser inserido
+
+/* TODOS OS DADOS FORAM INSERIDOS COM SUCESSO! */
