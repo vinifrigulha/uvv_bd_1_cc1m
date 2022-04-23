@@ -25,7 +25,7 @@ Para realizar o projeto, ferramentas auxiliares foram utilizadas. São elas:
 
 Já dentro do ambiente virtual, inicio este PSet construindo o projeto lógico do Elmasri no *SQL Power Architect*. A partir dele irei extrair os scripts das tabelas, já com as relações feitas, para todos os SGBDs. O resultado final é este:
 
-![Projeto Lógico](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/elmasri-sqlpa.PNG "Projeto Lógico - Elmasri")
+![Projeto Lógico](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/elmasri_sqlpa.PNG "Projeto Lógico - Elmasri")
 O arquivo é este: [Projeto Lógico](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/elmasri.architect) 
 
 >**OBS:** Como foi feita uma tradução da linguagem original desse livro para o português, foi necessário alterar a precisão do campo `funcionario.endereco` de *varchar(30)* para *varchar(50)* para que os dados fossem corretamente preenchidos.
