@@ -15,8 +15,9 @@ Este PSet teve o objetivo de implementar o projeto lógico apresentado nos capí
 * Oracle Database.
 
 Para realizar o projeto, ferramentas auxiliares foram utilizadas. São elas: 
-* Oracle VM VirtualBox - onde ocorrerá a virtualização do Oracle Linux, que é onde os programas estão instalados; e
-* SQL Power Architect - onde será feito o projeto lógico.
+* Oracle VM VirtualBox - onde ocorrerá a virtualização do Oracle Linux, que é onde os programas estão instalados;
+* SQL Power Architect - onde será feito o projeto lógico; e
+* DBeaver - onde testei os scritps em SQL de cada SGBD, para melhor visualização do passo a passo.
 
 ##
 
