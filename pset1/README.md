@@ -15,9 +15,8 @@ Este PSet teve o objetivo de implementar o projeto lógico apresentado nos capí
 * Oracle Database.
 
 Para realizar o projeto, ferramentas auxiliares foram utilizadas. São elas: 
-* Oracle VM VirtualBox - onde ocorrerá a virtualização do Oracle Linux, que é onde os programas estão instalados;
-* SQL Power Architect - onde será feito o projeto lógico; e
-* DBeaver - onde serão testados os scripts do projeto lógico.
+* Oracle VM VirtualBox - onde ocorrerá a virtualização do Oracle Linux, que é onde os programas estão instalados; e
+* SQL Power Architect - onde será feito o projeto lógico.
 
 ##
 
@@ -93,13 +92,22 @@ Com o banco de dados `uvv` selecionado, iniciaremos a inserção das tabelas e d
 
 ### Oracle Database
 
-![Script do Oracle Database](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imgs/oracle-architect.PNG "Script do Oracle Database")
->**OBS:** Assim como no PostgreSQL, já defina o *schema* como `elmasri`.
+Como foi feito até o momento, iniciaremos estraindo o script do projeto lógico no SQL Power Architect.
 
+![Script do Oracle Database](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/Oracle/oracle-sqlpa.PNG "Script do Oracle Database")
+
+Novamente, guardaremos este script no Bloco de Notas do Windows.
+Assim, começaremos iniciando o Terminal do Linux como usuário administrativo e 
+
+![Oracle Database no Terminal](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/Oracle/1-oracle.PNG "Oracle Database no Terminal")
+
+Aqui,
+
+>**OBS:** Todo esse passo a passo, inclusive as senhas utilizadas, estarão no arquivo [script_oracle.txt](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/script_oracle.txt)
 
 ##
 
 ### Considerações finais: 
 Neste PSet tive meu primeiro contato com a tecnologia Git e GitHub, além de aprender a fazer esta documentação com a linguagem de marcação Markdown.
 Também foi inédita a utilização do PostgreSQL e do Oracle Database, o que tornou este projeto mais desafiante.
-No final, creio que fiz um bom trabalho, pois estou um passo mais próximo do meu crescimento na área de Design e Desenvolvimento de Banco de Dados.
+No final, creio que fiz um bom trabalho, pois estou um passo mais perto do meu crescimento na área de Design e Desenvolvimento de Banco de Dados.
