@@ -26,19 +26,20 @@ Já dentro do ambiente virtual, inicio este PSet construindo o projeto lógico d
 
 ![Projeto Lógico](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/elmasri-sqlpa.PNG "Projeto Lógico - Elmasri")
 
->**OBS:** Como foi feita uma tradução da linguagem original desse livro para o português, foi necessário alterar a precisão do campo `funcionario.endereco` de *varchar(30)* para *varchar(50)* para que os dados fossem corretamente preenchidos.
+>**OBS:** Como foi feita uma tradução da linguagem original desse livro para o português, foi necessário alterar a precisão do campo `funcionario.endereco` de *varchar(30)* para *varchar(50)* para que os dados fossem corretamente preenchidos. Além disso, para que seja possível inserir dados nulos em campos com a constraint NOT NULL, tive que retirar essa restrição, como é o caso dos campos `funcionario.cpf_supervisor` e `trabalha_em.horas`
 
 ##
 
 ### PostgreSQL
 
-Ainda no SQL Power Architect, basta extraírmos o script em SQL das tabelas e suas relações:
+Ainda no SQL Power Architect, basta extrairmos o script em SQL das tabelas e suas relações:
 
 ![Projeto Lógico PSQL](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/PostgreSQL/psql-sqlpa.PNG "SQL do Projeto Lógico")
 
 Com o script extraído, basta copiar e colar em algum lugar - no meu caso, eu colei no Bloco de Notas no Windows (fora da máquina vitual).
 
 Agora, partiremos para o Terminal do Linux para configurarmos o usuário, o banco de dados e o esquema.
+
 Começamos iniciando o Postgres, conforme a imagem abaixo.
 
 ![PSQL no Terminal](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/PostgreSQL/1-psql.PNG "PSQL no Terminal")
@@ -97,11 +98,21 @@ Como foi feito até o momento, iniciaremos estraindo o script do projeto lógico
 ![Script do Oracle Database](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/Oracle/oracle-sqlpa.PNG "Script do Oracle Database")
 
 Novamente, guardaremos este script no Bloco de Notas do Windows.
-Assim, começaremos iniciando o Terminal do Linux como usuário administrativo e 
+Assim, começaremos iniciando o Terminal do Linux como usuário administrativo e conectar ao container `xepdb1`, que permitirá a criação do usuário.
 
 ![Oracle Database no Terminal](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/Oracle/1-oracle.PNG "Oracle Database no Terminal")
 
-Aqui,
+Aqui, ao contrário dos outros SGBDs, não será necessário criar um banco de dados, nem mesmo um esquema, apenas o usuário.
+
+Patindo para a criação do usuário e suas configurações, digitaremos estes comandos abaixo.
+
+![Criação do usuário vinicius](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/Oracle/2-oracle.PNG "Criação do usuário vinicius")
+
+Com o usuário criado, basta conectarmos a ele:
+
+![Conexão ao usuário vinicius](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/imagens/Oracle/3-oracle.PNG "Conexão ao usuário vinicius")
+
+Chegando aqui, iniciaremos a criação das tabelas e as inserções dos dados.
 
 >**OBS:** Todo esse passo a passo, inclusive as senhas utilizadas, estarão no arquivo [script_oracle.txt](https://github.com/vinifrigulha/uvv_bd_1_cc1m/blob/main/pset1/script_oracle.txt)
 
