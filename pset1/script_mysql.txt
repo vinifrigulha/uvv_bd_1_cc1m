@@ -11,7 +11,6 @@ collate utf8mb4_bin;
 create user vinicius identified by '123456';
 grant all privileges on uvv.* to vinicius;
 
-
 # TROCANDO DO USUÁRIO ROOT PARA O vinicius:
 system mysql -u vinicius -p
 123456
