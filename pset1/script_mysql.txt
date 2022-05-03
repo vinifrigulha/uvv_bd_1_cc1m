@@ -29,7 +29,7 @@ CREATE TABLE funcionario (
 /* Para conseguir inserir o endereço completo, tive que aumentar a precisão de 30 para 50 do campo endereco */
                 sexo CHAR(1),
                 salario DECIMAL(10,2),
-                cpf_supervisor CHAR(11) NOT NULL,
+                cpf_supervisor CHAR(11),
                 numero_departamento INT NOT NULL,
                 PRIMARY KEY (cpf)
 );
@@ -79,7 +79,7 @@ CREATE UNIQUE INDEX projeto_idx
 CREATE TABLE trabalha_em (
                 cpf_funcionario CHAR(11) NOT NULL,
                 numero_projeto_trabalha_em INT NOT NULL,
-                horas DECIMAL(3,1) NOT NULL,
+                horas DECIMAL(3,1),
                 PRIMARY KEY (cpf_funcionario, numero_projeto_trabalha_em)
 );
 
@@ -143,9 +143,8 @@ ON UPDATE NO ACTION;
 /* INSERÇÃO DOS DADOS */
 
 INSERT INTO funcionario VALUES
-(88866555576, 'Jorge', 'E', 'Brito', '1937-11-10', 'Rua do Horto, 35, São Paulo, SP', 'M', 55000, 88866555576, 1), 
-/* Jorge é inserido primeiro, pois é o "supervisor dos supervisores", logo seu CPF vai ser necessário para os outros funcionários serem cadastrados.
-Além disso, para que ele fosse cadastrado, seu cpf_supervisor será igual ao seu próprio cpf, o que evita o erro de ser NULL em um campo NOT NULL. */
+(88866555576, 'Jorge', 'E', 'Brito', '1937-11-10', 'Rua do Horto, 35, São Paulo, SP', 'M', 55000, NULL, 1), 
+/* Jorge é inserido primeiro, pois é o "supervisor dos supervisores", logo seu CPF vai ser necessário para os outros funcionários serem cadastrados. */
 (33344555587, 'Fernando', 'T', 'Wong', '1955-12-08', 'Rua da Lapa, 34, São Paulo, SP', 'M', 40000, 88866555576, 5), 
 -- Este foi inserido depois, pois é um supervisor
 (98765432168, 'Jennifer', 'S', 'Souza', '1941-06-20', 'Av. Arthur de Lima, 54, Santo André, SP', 'F', 43000, 88866555576, 4), 
@@ -242,8 +241,7 @@ INSERT INTO trabalha_em VALUES
 -- Depende do cadastro da Jennifer para ser inserido
 (98765432168, 20, 15), 
 -- Depende do cadastro da Jennifer para ser inserido
-(88866555576, 20, 0); 
+(88866555576, 20, NULL); 
 -- Depende do cadastro do Jorge para ser inserido
-/* Para preencher a última tupla, eu a adaptei para que lembrasse o NULL, logo coloquei o valor igual a 0. */
 
 /* TODOS OS DADOS FORAM INSERIDOS COM SUCESSO! */
