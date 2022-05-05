@@ -181,17 +181,17 @@ INSERT INTO localizacoes_departamento VALUES
 -- Depende do cadastro do departamento 5 para ser inserido
 
 INSERT INTO projeto VALUES
-(1, 'ProdutoX', 'Santo André', 5), 
+(1, 'Produto X', 'Santo André', 5), 
 -- Depende do cadastro do departamento 5 para ser inserido
-(2, 'ProdutoY', 'Itu', 5), 
+(2, 'Produto Y', 'Itu', 5), 
 -- Depende do cadastro do departamento 5 para ser inserido
-(3, 'ProdutoZ', 'São Paulo', 5), 
+(3, 'Produto Z', 'São Paulo', 5), 
 -- Depende do cadastro do departamento 5 para ser inserido
 (10, 'Informatização', 'Mauá', 4), 
 -- Depende do cadastro do departamento 4 para ser inserido
 (20, 'Reorganização', 'São Paulo', 1), 
 -- Depende do cadastro do departamento 1 para ser inserido
-(30, 'Novosbenefícios', 'Mauá', 4); 
+(30, 'Novos Benefícios', 'Mauá', 4); 
 -- Depende do cadastro do departamento 4 para ser inserido
 
 INSERT INTO dependente VALUES
