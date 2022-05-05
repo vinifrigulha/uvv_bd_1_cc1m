@@ -78,9 +78,9 @@ CREATE UNIQUE INDEX projeto_idx
 
 CREATE TABLE trabalha_em (
                 cpf_funcionario CHAR(11) NOT NULL,
-                numero_projeto_trabalha_em INT NOT NULL,
+                numero_projeto INT NOT NULL,
                 horas DECIMAL(3,1),
-                PRIMARY KEY (cpf_funcionario, numero_projeto_trabalha_em)
+                PRIMARY KEY (cpf_funcionario, numero_projeto)
 );
 
 ALTER TABLE trabalha_em COMMENT 'Criação da tabela "trabalha_em"';
@@ -135,7 +135,7 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 ALTER TABLE trabalha_em ADD CONSTRAINT projeto_trabalha_em_fk
-FOREIGN KEY (numero_projeto_trabalha_em)
+FOREIGN KEY (numero_projeto)
 REFERENCES projeto (numero_projeto)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
