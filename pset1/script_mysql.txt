@@ -63,7 +63,7 @@ ALTER TABLE  localizacoes_departamento COMMENT 'Criação da tabela "localizacoe
 
 CREATE TABLE projeto (
                 numero_projeto INT NOT NULL,
-                nome_projeto VARCHAR(15) NOT NULL,
+                nome_projeto VARCHAR(20) NOT NULL,
                 local_projeto VARCHAR(15),
                 numero_departamento INT NOT NULL,
                 PRIMARY KEY (numero_projeto)
