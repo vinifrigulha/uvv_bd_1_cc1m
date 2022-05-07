@@ -1,4 +1,4 @@
-# PSet1
+# PSet 1
 ## Praticando o *PostgreSQL*, *MariaDB/MySQL* e *Oracle Database*
 
 ### Aluno: Vinícius Frigulha Ribeiro
