@@ -123,20 +123,16 @@ Jorge E Brito    | 84 anos | R$55000.00    | R$63250.00
 ~~~SQL
 SELECT 
 	d.nome_departamento "DEPARTAMENTO", 
-	g.gerente "GERÊNCIA", 
-	CONCAT(f.primeiro_nome, ' ',nome_meio, ' ',ultimo_nome) "FUNCIONÁRIO", 
+	CONCAT(g.primeiro_nome, ' ', g.nome_meio, ' ', g.ultimo_nome) "GERÊNCIA", 
+	CONCAT(f.primeiro_nome, ' ',f.nome_meio, ' ',f.ultimo_nome) "FUNCIONÁRIO", 
 	CONCAT('R$', f.salario) "SALÁRIO"
 FROM funcionario f
 INNER JOIN 
 	departamento d 
 ON d.numero_departamento = f.numero_departamento
 INNER JOIN 
-	(SELECT CONCAT(f.primeiro_nome,' ', f.nome_meio, ' ', f.ultimo_nome) gerente,
-	d.numero_departamento
-	FROM funcionario f
-	INNER JOIN departamento d
-	ON f.cpf = d.cpf_gerente) g
-ON d.numero_departamento = g.numero_departamento
+	funcionario g
+	ON g.cpf = d.cpf_gerente
 ORDER BY d.nome_departamento ASC, f.salario DESC;
 ~~~
 
