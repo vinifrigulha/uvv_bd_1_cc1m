@@ -17,6 +17,36 @@ Também tive a ideia de classificar os níveis da hierarquia: Pai - nível 0; Fi
 
 ##
 
+### Código:
+
+~~~SQL
+WITH RECURSIVE Pai_Filho AS (
+SELECT 	codigo
+,	nome
+,	codigo_pai
+,	0 AS nível
+,	CAST(nome AS TEXT) AS hierarquia
+FROM classificacao
+WHERE codigo_pai IS NULL 
+
+UNION ALL
+
+SELECT 	c.codigo
+,	pf.nome
+,	c.codigo_pai
+,	pf.nível + 1 AS nível
+,	CAST(pf.hierarquia || ' >>> ' || c.nome AS TEXT) AS hierarquia
+FROM classificacao c
+INNER JOIN Pai_Filho pf ON c.codigo_pai = pf.codigo)
+SELECT 	nível AS "Nível"
+,	hierarquia AS "Hierarquia"
+,	codigo_pai AS "Código do Pai"
+FROM Pai_Filho
+ORDER BY hierarquia;
+~~~
+
+##
+
 ### Resultado:
 
 | Nível |                                       Hierarquia                                       | Código do Pai |
@@ -120,6 +150,6 @@ Também tive a ideia de classificar os níveis da hierarquia: Pai - nível 0; Fi
 
 ### Considerações Finais:
 
-Foi uma tarefa interessante, uma vez que tive que usar comandos novos como o WITH RECURSIVE para criar uma tabela momentaneamente e a função CAST() para definir determinado dado no formato texto (com o uso do AS TEXT).
+Foi uma tarefa interessante, uma vez que tive que usar comandos novos como o WITH RECURSIVE para criar uma tabela momentaneamente e a função CAST( ) para definir determinado dado no formato texto (com o uso do AS TEXT).
 
 Aprecio a dedicação do Professor Abrantes por criar tais Problems Sets para que nós, alunos, possamos explorar ao máximo os comandos SQL.
