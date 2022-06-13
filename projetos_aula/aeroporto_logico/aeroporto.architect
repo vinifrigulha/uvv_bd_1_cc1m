@@ -11,25 +11,25 @@
  </source-databases>
  <target-database id="ppdb" dbcs-ref="DS0">
   <table id="TAB1" populated="true" UUID="12b13a15-b146-433f-a633-17d2b3d4b32f" name="passageiros" objectType="TABLE" physicalName="passageiros" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena as informações dos passageiros.</remarks>
    <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL2" populated="true" UUID="4b8c07fd-063c-4482-9edc-9f1e6377a741" autoIncrement="false" autoIncrementSequenceName="passageiros_cod_passageiro_seq" defaultValue="" name="cod_passageiro" nullable="0" physicalName="cod_passageiro" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PK da tabela. Código identificador dos passageiros.</remarks>
     </column>
     <column id="COL3" populated="true" UUID="237e165f-0e5f-47eb-bdbf-bba0410a60c4" autoIncrement="false" autoIncrementSequenceName="passageiros_primeiro_nome_seq" defaultValue="" name="primeiro_nome" nullable="0" physicalName="primeiro_nome" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Primeiro nome do passageiro.</remarks>
     </column>
     <column id="COL4" populated="true" UUID="96a707ff-1268-4041-929a-8530fef63d51" autoIncrement="false" autoIncrementSequenceName="passageiros_nome_meio_seq" defaultValue="" name="nome_meio" nullable="1" physicalName="nome_meio" precision="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Inicial do sobrenome do meio do passageiro.</remarks>
     </column>
     <column id="COL5" populated="true" UUID="3b4bca4a-0332-47ec-83ff-a63b41e7cfbf" autoIncrement="false" autoIncrementSequenceName="passageiros_ultimo_nome_seq" defaultValue="" name="ultimo_nome" nullable="0" physicalName="ultimo_nome" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Último sobrenome do passageiro.</remarks>
     </column>
     <column id="COL6" populated="true" UUID="3eec6054-0dd5-476b-8080-0d204c2e02a3" autoIncrement="false" autoIncrementSequenceName="passageiros_data_nascimento_seq" defaultValue="" name="data_nascimento" nullable="0" physicalName="data_nascimento" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
-     <remarks></remarks>
+     <remarks>Data de nascimento do passageiro.</remarks>
     </column>
     <column id="COL7" populated="true" UUID="bc0e9dd6-ab2c-47cf-884d-476f22913ef1" autoIncrement="false" autoIncrementSequenceName="passageiros_sexo_seq" defaultValue="" name="sexo" nullable="0" physicalName="sexo" precision="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
-     <remarks></remarks>
+     <remarks>Sexo do passageiro.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB13" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -43,22 +43,22 @@
    </folder>
   </table>
   <table id="TAB10" populated="true" UUID="8729be88-91e2-4aee-995e-b40c18667196" name="bagagens" objectType="TABLE" physicalName="bagagens" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena as informações das bagagens.</remarks>
    <folder id="FOLTAB101" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL11" populated="true" UUID="1aa3de2c-1dfd-44c8-acd3-9a93785aafe4" autoIncrement="false" autoIncrementSequenceName="bagagens_cod_passageiro_seq" defaultValue="" name="cod_passageiro" nullable="0" physicalName="cod_passageiro" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PFK da tabela passageiros. Código identificador dos passageiros.</remarks>
     </column>
     <column id="COL12" populated="true" UUID="089c0274-491c-4d4a-857c-af84e2fa1678" autoIncrement="false" autoIncrementSequenceName="bagagens_cod_bagagem_seq" defaultValue="" name="cod_bagagem" nullable="0" physicalName="cod_bagagem" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PK da tabela. Código identificador das bagagens.</remarks>
     </column>
     <column id="COL13" populated="true" UUID="0eae6914-c61f-4755-adb8-f0bc7cdff2c5" autoIncrement="false" autoIncrementSequenceName="bagagens_cod_voo_seq" defaultValue="" name="cod_voo" nullable="0" physicalName="cod_voo" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>FK da tabela voos. Código identificador dos voos.</remarks>
     </column>
     <column id="COL14" populated="true" UUID="b9069b96-16af-4415-ad23-00ad9504bec3" autoIncrement="false" autoIncrementSequenceName="bagagens_peso_seq" defaultValue="" name="peso" nullable="0" physicalName="peso" precision="4" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
-     <remarks></remarks>
+     <remarks>Peso da babagem em quilogramas.</remarks>
     </column>
     <column id="COL15" populated="true" UUID="89455846-2341-48f8-8afb-468038341b99" autoIncrement="false" autoIncrementSequenceName="bagagens_fragil_seq" defaultValue="" name="fragil" nullable="0" physicalName="fragil" precision="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
-     <remarks></remarks>
+     <remarks>Indicador de fragilidade (S para &quot;sim&quot; e N para &quot;não&quot;).</remarks>
     </column>
     </folder>
     <folder id="FOLTAB103" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -73,22 +73,22 @@
    </folder>
   </table>
   <table id="TAB19" populated="true" UUID="8d28358e-1349-4f51-8123-bcaa0fe77d79" name="voos" objectType="TABLE" physicalName="voos" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena as informações do voo.</remarks>
    <folder id="FOLTAB191" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL20" populated="true" UUID="020b4a12-8515-4558-8dda-078b787721a3" autoIncrement="false" autoIncrementSequenceName="voos_cod_voo_seq" defaultValue="" name="cod_voo" nullable="0" physicalName="cod_voo" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PK da tabela. Código identificador dos voos.</remarks>
     </column>
     <column id="COL21" populated="true" UUID="839e9137-68ea-40e4-94c5-110ce993af7b" autoIncrement="false" autoIncrementSequenceName="voos_data_partida_seq" defaultValue="" name="data_partida" nullable="0" physicalName="data_partida" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
-     <remarks></remarks>
+     <remarks>Data de partida do voo.</remarks>
     </column>
     <column id="COL22" populated="true" UUID="9d22b93f-d2cc-4d93-adaa-1a87c7aec9e8" autoIncrement="false" autoIncrementSequenceName="voos_horario_partida_seq" defaultValue="" name="horario_partida" nullable="0" physicalName="horario_partida" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="92" userDefinedTypeUUID="10d6960f-169d-47c2-860a-37341342b1d5" >
-     <remarks></remarks>
+     <remarks>Horário de partida do voo.</remarks>
     </column>
     <column id="COL23" populated="true" UUID="3017199b-03b8-4786-a1e7-d32ec698757f" autoIncrement="false" autoIncrementSequenceName="voos_cod_aero_origem_seq" defaultValue="" name="cod_aero_origem" nullable="0" physicalName="cod_aero_origem" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>FK da tabela aeroportos. Código identificador do aeroporto de origem.</remarks>
     </column>
     <column id="COL24" populated="true" UUID="edac4e81-6d12-4388-bc07-112df5f7cca8" autoIncrement="false" autoIncrementSequenceName="voos_cod_aero_destino_seq" defaultValue="" name="cod_aero_destino" nullable="0" physicalName="cod_aero_destino" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>FK da tabela aeroportos. Código identificador do aeroporto de destino.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB193" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -102,16 +102,16 @@
    </folder>
   </table>
   <table id="TAB27" populated="true" UUID="177431d7-f752-46f2-9ee5-306c61852d37" name="aeroportos" objectType="TABLE" physicalName="aeroportos" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena as informações dos aeroportos.</remarks>
    <folder id="FOLTAB271" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL28" populated="true" UUID="95d75add-67ba-41fe-8535-bf6eb0140f95" autoIncrement="false" autoIncrementSequenceName="aeroportos_cod_aeroporto_seq" defaultValue="" name="cod_aeroporto" nullable="0" physicalName="cod_aeroporto" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PK da tabela. Código identificador do aeroporto.</remarks>
     </column>
     <column id="COL29" populated="true" UUID="646c72dc-6b3c-46be-8a7c-e536bf2d0a62" autoIncrement="false" autoIncrementSequenceName="aeroportos_cod_cidade_seq" defaultValue="" name="cod_cidade" nullable="0" physicalName="cod_cidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>FK da tabela cidade. Código identificador da cidade.</remarks>
     </column>
     <column id="COL30" populated="true" UUID="a3b2a28c-3a5a-4385-b93d-5b7b1883f88c" autoIncrement="false" autoIncrementSequenceName="aeroportos_cod_telefone_seq" defaultValue="" name="cod_telefone" nullable="0" physicalName="cod_telefone" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>FK da tabela telefone. Código identificador do telefone.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB273" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -125,49 +125,49 @@
    </folder>
   </table>
   <table id="TAB33" populated="true" UUID="130ed01a-6a62-4584-8b40-b793e3ee60a2" name="tripulantes" objectType="TABLE" physicalName="tripulantes" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena as informações dos tripulantes.</remarks>
    <folder id="FOLTAB331" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL34" populated="true" UUID="1dd478de-2e62-4439-934d-ba7d32015a50" autoIncrement="false" autoIncrementSequenceName="tripulantes_cod_tripulante_seq" defaultValue="" name="cod_tripulante" nullable="0" physicalName="cod_tripulante" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PK da tabela. Código identificador do tripulante.</remarks>
     </column>
     <column id="COL35" populated="true" UUID="66349870-5f68-4b1c-8093-339fea53fac1" autoIncrement="false" autoIncrementSequenceName="tripulantes_primeiro_nome_seq" defaultValue="" name="primeiro_nome" nullable="0" physicalName="primeiro_nome" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Primeiro nome do tripulante.</remarks>
     </column>
     <column id="COL36" populated="true" UUID="cdba4ff7-5594-49d6-b9c3-46ec26bfeaac" autoIncrement="false" autoIncrementSequenceName="tripulantes_nome_meio_seq" defaultValue="" name="nome_meio" nullable="1" physicalName="nome_meio" precision="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
-     <remarks></remarks>
+     <remarks>Inicial do primeiro sobrenome do tripulante.</remarks>
     </column>
     <column id="COL37" populated="true" UUID="f81afa64-255e-4a80-bff0-90d0789280af" autoIncrement="false" autoIncrementSequenceName="tripulantes_ultimo_nome_seq" defaultValue="" name="ultimo_nome" nullable="0" physicalName="ultimo_nome" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Último sobrenome do tripulante.</remarks>
     </column>
     <column id="COL38" populated="true" UUID="9f1347e2-bd4f-4bd9-a5a9-a074717473d0" autoIncrement="false" autoIncrementSequenceName="tripulantes_passaporte_seq" defaultValue="" name="passaporte" nullable="0" physicalName="passaporte" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
-     <remarks></remarks>
+     <remarks>Número do passaporte.</remarks>
     </column>
     <column id="COL39" populated="true" UUID="7588c391-de3c-48a6-985d-b6d33011f3d9" autoIncrement="false" autoIncrementSequenceName="tripulantes_cod_telefone_seq" defaultValue="" name="cod_telefone" nullable="0" physicalName="cod_telefone" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>FK da tabela telefone. Código identificador do telefone.</remarks>
     </column>
     <column id="COL40" populated="true" UUID="f18d5a46-4266-4155-9705-206a45d84070" autoIncrement="false" autoIncrementSequenceName="tripulantes_cod_idioma_seq" defaultValue="" name="cod_idioma" nullable="0" physicalName="cod_idioma" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>FK da tabela idioma. Código identificador do idioma.</remarks>
     </column>
     <column id="COL41" populated="true" UUID="953c0366-6e88-4fff-8ef1-4c124b6df05e" autoIncrement="false" autoIncrementSequenceName="tripulantes_logradouro_seq" defaultValue="" name="logradouro" nullable="0" physicalName="logradouro" precision="200" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Logradouro do endereço do tripulante.</remarks>
     </column>
     <column id="COL42" populated="true" UUID="0946ea32-10a5-4699-a644-79c66810ffb4" autoIncrement="false" autoIncrementSequenceName="tripulantes_numero_end_seq" defaultValue="" name="numero_end" nullable="0" physicalName="numero_end" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Número do endereço do tripulante.</remarks>
     </column>
     <column id="COL43" populated="true" UUID="ef1c9264-ef80-447c-ac0a-f75c6714f9b7" autoIncrement="false" autoIncrementSequenceName="tripulantes_complemento_end_seq" defaultValue="" name="complemento_end" nullable="1" physicalName="complemento_end" precision="200" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Complemento do endereço.</remarks>
     </column>
     <column id="COL44" populated="true" UUID="cf97f258-6031-4951-a913-0dc2b12d5e5e" autoIncrement="false" autoIncrementSequenceName="tripulantes_cod_cep_seq" defaultValue="" name="cod_cep" nullable="0" physicalName="cod_cep" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>FK da tabela CEP. Código identificador do CEP.</remarks>
     </column>
     <column id="COL45" populated="true" UUID="68a2e43a-fa44-436e-982e-2f6b104ab73e" autoIncrement="false" autoIncrementSequenceName="tripulantes_cod_bairro_seq" defaultValue="" name="cod_bairro" nullable="0" physicalName="cod_bairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>FK da tabela bairro. Código identificador do bairro.</remarks>
     </column>
     <column id="COL46" populated="true" UUID="5eb0393c-88fc-4a60-a661-292446932924" autoIncrement="false" autoIncrementSequenceName="tripulantes_cod_cidade_seq" defaultValue="" name="cod_cidade" nullable="0" physicalName="cod_cidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>FK da tabela cidade. Código identificador da cidade.</remarks>
     </column>
     <column id="COL47" populated="true" UUID="f245bb25-f3c1-43bd-8a22-a9043b1a7ecf" autoIncrement="false" autoIncrementSequenceName="uf_uf_seq" defaultValue="" name="uf" nullable="0" physicalName="uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
-     <remarks></remarks>
+     <remarks>FK da tabela uf. Código identificador do UF.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB333" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -181,10 +181,10 @@
    </folder>
   </table>
   <table id="TAB50" populated="true" UUID="ec5dbf13-ad49-4c3b-b5f8-c868049b9902" name="comissarios" objectType="TABLE" physicalName="comissarios" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena as informações dos comissários.</remarks>
    <folder id="FOLTAB501" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL51" populated="true" UUID="ab0343b0-ec71-4ca2-a86a-c5a0e8129b68" autoIncrement="false" autoIncrementSequenceName="comissarios_cod_tripulante_seq" defaultValue="" name="cod_tripulante" nullable="0" physicalName="cod_tripulante" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PFK da tabela tripulantes. Código identificador do tripulante.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB503" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -198,16 +198,16 @@
    </folder>
   </table>
   <table id="TAB54" populated="true" UUID="4c4c2d6a-9896-476d-9945-ade760dce5fd" name="pilotos" objectType="TABLE" physicalName="pilotos" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena as informações dos pilotos.</remarks>
    <folder id="FOLTAB541" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL55" populated="true" UUID="bd7532f7-2122-4923-ac16-41e103cfd814" autoIncrement="false" autoIncrementSequenceName="pilotos_cod_tripulante_seq" defaultValue="" name="cod_tripulante" nullable="0" physicalName="cod_tripulante" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PFK da tabela tripulantes. Código identificador do tripulante.</remarks>
     </column>
     <column id="COL56" populated="true" UUID="eccfdea0-61d1-4699-b313-accc1cfa0b4e" autoIncrement="false" autoIncrementSequenceName="pilotos_numero_brevet_seq" defaultValue="" name="numero_brevet" nullable="0" physicalName="numero_brevet" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
-     <remarks></remarks>
+     <remarks>Número de brevet do piloto.</remarks>
     </column>
     <column id="COL57" populated="true" UUID="6bb0bc63-b71a-4bb8-ae05-a350c2ced87c" autoIncrement="false" autoIncrementSequenceName="pilotos_data_exp_brevet_seq" defaultValue="" name="data_exp_brevet" nullable="0" physicalName="data_exp_brevet" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
-     <remarks></remarks>
+     <remarks>Data da expedição do brevet.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB543" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -221,19 +221,19 @@
    </folder>
   </table>
   <table id="TAB60" populated="true" UUID="6bf76eb5-0e77-4696-9989-2b3386601279" name="reservam" objectType="TABLE" physicalName="reservam" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena os detalhes da reserva do voo pelo passageiro.</remarks>
    <folder id="FOLTAB601" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL61" populated="true" UUID="bfc800ee-d5eb-442b-8c9b-152660ad4f0f" autoIncrement="false" autoIncrementSequenceName="passageiros_cod_passageiro_seq" defaultValue="" name="cod_passageiro" nullable="0" physicalName="cod_passageiro" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+    <column id="COL61" populated="true" UUID="bfc800ee-d5eb-442b-8c9b-152660ad4f0f" autoIncrement="false" autoIncrementSequenceName="reservam_cod_passageiro_seq" defaultValue="" name="cod_passageiro" nullable="0" physicalName="cod_passageiro" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK da tabela passageiros. Código identificador dos passageiros.</remarks>
     </column>
-    <column id="COL62" populated="true" UUID="7031dadb-639a-43db-b106-3ae276db58f9" autoIncrement="false" autoIncrementSequenceName="voos_cod_voo_seq" defaultValue="" name="cod_voo" nullable="0" physicalName="cod_voo" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+    <column id="COL62" populated="true" UUID="7031dadb-639a-43db-b106-3ae276db58f9" autoIncrement="false" autoIncrementSequenceName="reservam_cod_voo_seq" defaultValue="" name="cod_voo" nullable="0" physicalName="cod_voo" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>PFK da tabela voos. Código identificador dos voos.</remarks>
     </column>
     <column id="COL63" populated="true" UUID="fab9a125-a8b9-459f-a31d-e00702afb46c" autoIncrement="false" autoIncrementSequenceName="reservam_data_inicio_seq" defaultValue="" name="data_inicio" nullable="0" physicalName="data_inicio" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
-     <remarks></remarks>
+     <remarks>Data do início da reserva.</remarks>
     </column>
     <column id="COL64" populated="true" UUID="26366d10-af58-4200-8b33-b1bdfbaa1df2" autoIncrement="false" autoIncrementSequenceName="reservam_data_fim_seq" defaultValue="" name="data_fim" nullable="0" physicalName="data_fim" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
-     <remarks></remarks>
+     <remarks>Data do fim da reserva.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB603" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -248,13 +248,13 @@
    </folder>
   </table>
   <table id="TAB68" populated="true" UUID="5d0e0d4b-c669-424b-8d42-dd70f73fe671" name="cep" objectType="TABLE" physicalName="cep" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena os CEPs.</remarks>
    <folder id="FOLTAB681" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL69" populated="true" UUID="5a5b451c-ac60-4f03-8168-790e63097e70" autoIncrement="false" autoIncrementSequenceName="cep_cod_cep_seq" defaultValue="" name="cod_cep" nullable="0" physicalName="cod_cep" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PK da tabela. Código identificador do CEP.</remarks>
     </column>
     <column id="COL70" populated="true" UUID="5f7f23e2-d776-4ebc-b272-f501ced17bbb" autoIncrement="false" autoIncrementSequenceName="cep_cep_seq" defaultValue="" name="cep" nullable="0" physicalName="cep" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
-     <remarks></remarks>
+     <remarks>Número do CEP.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB683" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -268,13 +268,13 @@
    </folder>
   </table>
   <table id="TAB73" populated="true" UUID="eb20dde4-9097-4603-bf0b-d9cc02a8702f" name="bairro" objectType="TABLE" physicalName="bairro" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena os bairros.</remarks>
    <folder id="FOLTAB731" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL74" populated="true" UUID="675d534e-31b9-47ac-832e-4600d4d1869f" autoIncrement="false" autoIncrementSequenceName="bairro_cod_bairro_seq" defaultValue="" name="cod_bairro" nullable="0" physicalName="cod_bairro" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PK da tabela. Código identificador do bairro.</remarks>
     </column>
     <column id="COL75" populated="true" UUID="80fc6f4b-b519-4700-b11d-67d1830a5503" autoIncrement="false" autoIncrementSequenceName="bairro_bairro_seq" defaultValue="" name="bairro" nullable="0" physicalName="bairro" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Nome do bairro.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB733" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -288,13 +288,13 @@
    </folder>
   </table>
   <table id="TAB78" populated="true" UUID="f984d9ad-fe1e-4ed6-a1b3-afefcb1ede87" name="cidade" objectType="TABLE" physicalName="cidade" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena as cidades.</remarks>
    <folder id="FOLTAB781" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL79" populated="true" UUID="979ccf2e-c66c-4147-a014-28f8e4325b85" autoIncrement="false" autoIncrementSequenceName="cidade_cod_cidade_seq" defaultValue="" name="cod_cidade" nullable="0" physicalName="cod_cidade" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PK da tabela. Código identificador da cidade.</remarks>
     </column>
     <column id="COL80" populated="true" UUID="422c5014-6360-44d4-8232-8d82f5a9e7dc" autoIncrement="false" autoIncrementSequenceName="cidade_cidade_seq" defaultValue="" name="cidade" nullable="0" physicalName="cidade" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Nome da cidade</remarks>
     </column>
     </folder>
     <folder id="FOLTAB783" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -308,13 +308,13 @@
    </folder>
   </table>
   <table id="TAB83" populated="true" UUID="f60bed90-44a5-4b0b-afe4-d7d43c2616dd" name="uf" objectType="TABLE" physicalName="uf" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena as Unidades Federativas do Brasil.</remarks>
    <folder id="FOLTAB831" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL84" populated="true" UUID="e8e87203-ce8e-40e0-bebd-8fde52d86cef" autoIncrement="false" autoIncrementSequenceName="uf_uf_seq" defaultValue="" name="uf" nullable="0" physicalName="uf" precision="2" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
-     <remarks></remarks>
+     <remarks>PK da tabela. Sigla da UF.</remarks>
     </column>
     <column id="COL85" populated="true" UUID="5ca0ae9c-b088-4a0d-8c49-5245ed9944bf" autoIncrement="false" autoIncrementSequenceName="uf_nome_uf_seq" defaultValue="" name="nome_uf" nullable="0" physicalName="nome_uf" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Nome por extenso da UF.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB833" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -328,16 +328,16 @@
    </folder>
   </table>
   <table id="TAB88" populated="true" UUID="63855da3-3f7b-478e-a809-490c3f433896" name="telefone" objectType="TABLE" physicalName="telefone" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena as informações dos telefones.</remarks>
    <folder id="FOLTAB881" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL89" populated="true" UUID="58584bb5-37b7-4664-9e8c-66101ae11810" autoIncrement="false" autoIncrementSequenceName="telefone_cod_telefone_seq" defaultValue="" name="cod_telefone" nullable="0" physicalName="cod_telefone" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PK da tabela. Código identificador do telefone.</remarks>
     </column>
     <column id="COL90" populated="true" UUID="28ee6303-8786-4729-9862-a6480593292e" autoIncrement="false" autoIncrementSequenceName="telefone_ddd_seq" defaultValue="" name="ddd" nullable="0" physicalName="ddd" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
-     <remarks></remarks>
+     <remarks>DDD do telefone.</remarks>
     </column>
     <column id="COL91" populated="true" UUID="75b1bbf8-08e9-4457-bd6d-b836dda1ff59" autoIncrement="false" autoIncrementSequenceName="telefone_numero_telefone_seq" defaultValue="" name="numero_telefone" nullable="0" physicalName="numero_telefone" precision="9" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Número de telefone (apenas dígitos numéricos).</remarks>
     </column>
     </folder>
     <folder id="FOLTAB883" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -351,13 +351,13 @@
    </folder>
   </table>
   <table id="TAB94" populated="true" UUID="c269077c-7ecd-4713-8d57-ac4a69ba615a" name="idioma" objectType="TABLE" physicalName="idioma" >
-   <remarks></remarks>
+   <remarks>Tabela que armazena os idiomas.</remarks>
    <folder id="FOLTAB941" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL95" populated="true" UUID="71616196-428b-430d-af76-87f50b47bccf" autoIncrement="false" autoIncrementSequenceName="idioma_cod_idioma_seq" defaultValue="" name="cod_idioma" nullable="0" physicalName="cod_idioma" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+     <remarks>PK da tabela. Código identificador do idioma.</remarks>
     </column>
     <column id="COL96" populated="true" UUID="67ac66bf-b8cb-4b21-b06e-294c3f3357a8" autoIncrement="false" autoIncrementSequenceName="idioma_idioma_seq" defaultValue="" name="idioma" nullable="0" physicalName="idioma" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
+     <remarks>Nome do idioma.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB943" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -448,7 +448,7 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="false" target-catalog="aeroporto"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.MySqlDDLGenerator" allow-connection="true" target-catalog="aeroporto"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="0.8408964152537145" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
