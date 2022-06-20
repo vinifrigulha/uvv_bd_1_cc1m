@@ -54,12 +54,12 @@
    </folder>
   </table>
   <table id="TAB12" populated="true" UUID="27491faf-ea74-4029-9619-3a9508c55126" name="pedido" objectType="TABLE" physicalName="pedido" >
-   <remarks>Tabela que armazena os pedidos.</remarks>
+   <remarks>Tabela que armazena informações sobre os pedidos.</remarks>
    <folder id="FOLTAB121" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL13" populated="true" UUID="f77a7d8c-11a1-4633-b8ba-926ae8855396" autoIncrement="false" autoIncrementSequenceName="pedido_no_pedido_seq" defaultValue="" name="no_pedido" nullable="0" physicalName="no_pedido" precision="3" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
      <remarks>PK da tabela. Número identificador do pedido.</remarks>
     </column>
-    <column id="COL14" populated="true" UUID="0b6b45aa-9d64-4e2a-a95e-8fac760bfe36" autoIncrement="false" autoIncrementSequenceName="produto_cod_produto_seq" defaultValue="" name="cod_produto" nullable="0" physicalName="cod_produto" precision="4" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+    <column id="COL14" populated="true" UUID="0b6b45aa-9d64-4e2a-a95e-8fac760bfe36" autoIncrement="false" autoIncrementSequenceName="pedido_cod_produto_seq" defaultValue="" name="cod_produto" nullable="0" physicalName="cod_produto" precision="4" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks>PK da tabela. Código identificador do produto.</remarks>
     </column>
     <column id="COL15" populated="true" UUID="7fd1584b-c93d-46ab-a44d-acaa39ab9295" autoIncrement="false" autoIncrementSequenceName="pedido_data_emissao_seq" defaultValue="" name="data_emissao" nullable="0" physicalName="data_emissao" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
@@ -77,10 +77,10 @@
     <column id="COL19" populated="true" UUID="f22a2851-617c-45ae-8b40-1487cd8689ad" autoIncrement="false" autoIncrementSequenceName="cep_cep_seq" defaultValue="" name="cep" nullable="0" physicalName="cep" precision="8" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks>PK da tabela. Número do CEP.</remarks>
     </column>
-    <column id="COL20" populated="true" UUID="2cf01b33-cd9a-4607-aed0-b53ce27ce850" autoIncrement="false" autoIncrementSequenceName="bairro_cod_bairro_seq" defaultValue="" name="cod_bairro" nullable="0" physicalName="cod_bairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL20" populated="true" UUID="2cf01b33-cd9a-4607-aed0-b53ce27ce850" autoIncrement="false" autoIncrementSequenceName="pedido_cod_bairro_seq" defaultValue="" name="cod_bairro" nullable="0" physicalName="cod_bairro" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>PK da tabela. Código identificador do bairro.</remarks>
     </column>
-    <column id="COL21" populated="true" UUID="befa1f7a-e076-4eba-ad67-0bed61380bd0" autoIncrement="false" autoIncrementSequenceName="cidade_cod_cidade_seq" defaultValue="" name="cod_cidade" nullable="0" physicalName="cod_cidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL21" populated="true" UUID="befa1f7a-e076-4eba-ad67-0bed61380bd0" autoIncrement="false" autoIncrementSequenceName="pedido_cod_cidade_seq" defaultValue="" name="cod_cidade" nullable="0" physicalName="cod_cidade" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>PK da tabela. Código identificador da cidade.</remarks>
     </column>
     <column id="COL22" populated="true" UUID="e3975538-1aad-4229-aae3-d1bab52c5548" autoIncrement="false" autoIncrementSequenceName="uf_uf_seq" defaultValue="" name="uf" nullable="0" physicalName="uf" precision="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
@@ -177,19 +177,19 @@
     </index>
    </folder>
   </table>
-  <table id="TAB45" populated="true" UUID="fae80a65-6daf-476c-953f-b8ad6a39aa14" name="fornecedor_produto" objectType="TABLE" physicalName="fornecedor_produto" >
+  <table id="TAB45" populated="true" UUID="fae80a65-6daf-476c-953f-b8ad6a39aa14" name="venda" objectType="TABLE" physicalName="venda" >
    <remarks>Tabela intermediária entre fornecedor e produto.</remarks>
    <folder id="FOLTAB451" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL46" populated="true" UUID="b4a776fc-90b4-432d-8138-8797dd2c5383" autoIncrement="false" autoIncrementSequenceName="fornecedor_cnpj_fornecedor_seq" defaultValue="" name="cnpj_fornecedor" nullable="0" physicalName="cnpj_fornecedor" precision="14" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+    <column id="COL46" populated="true" UUID="b4a776fc-90b4-432d-8138-8797dd2c5383" autoIncrement="false" autoIncrementSequenceName="venda_cnpj_fornecedor_seq" defaultValue="" name="cnpj_fornecedor" nullable="0" physicalName="cnpj_fornecedor" precision="14" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks>PFK da tabela fornecedor. CNPJ do fornecedor.</remarks>
     </column>
-    <column id="COL47" populated="true" UUID="f9732ce3-dc05-495f-a8a8-e77803974504" autoIncrement="false" autoIncrementSequenceName="produto_cod_produto_seq" defaultValue="" name="cod_produto" nullable="0" physicalName="cod_produto" precision="4" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+    <column id="COL47" populated="true" UUID="f9732ce3-dc05-495f-a8a8-e77803974504" autoIncrement="false" autoIncrementSequenceName="venda_cod_produto_seq" defaultValue="" name="cod_produto" nullable="0" physicalName="cod_produto" precision="4" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks>PFK da tabela. Código identificador do produto.</remarks>
     </column>
-    <column id="COL48" populated="true" UUID="b898f7c4-c4de-4978-86c7-fef92f240422" autoIncrement="false" autoIncrementSequenceName="produto_preco_seq" defaultValue="" name="preco" nullable="0" physicalName="preco" precision="6" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
+    <column id="COL48" populated="true" UUID="b898f7c4-c4de-4978-86c7-fef92f240422" autoIncrement="false" autoIncrementSequenceName="venda_preco_seq" defaultValue="" name="preco" nullable="0" physicalName="preco" precision="6" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
      <remarks>Preço unitário do produto.</remarks>
     </column>
-    <column id="COL49" populated="true" UUID="4e15dd4e-1420-44a3-8a94-0aad210fb310" autoIncrement="false" autoIncrementSequenceName="pedido_quantidade_seq" defaultValue="" name="quantidade" nullable="0" physicalName="quantidade" precision="3" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
+    <column id="COL49" populated="true" UUID="4e15dd4e-1420-44a3-8a94-0aad210fb310" autoIncrement="false" autoIncrementSequenceName="venda_quantidade_seq" defaultValue="" name="quantidade" nullable="0" physicalName="quantidade" precision="3" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
      <remarks>Quantidade de produtos vendidos.</remarks>
     </column>
     </folder>
@@ -198,7 +198,7 @@
     <folder id="FOLTAB452" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
     </folder>
     <folder id="FOLTAB454" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX50" populated="true" UUID="33a200d5-d995-45e0-a7aa-619e84751605" clustered="false" name="pk_fornecedor_produto" physicalName="pk_fornecedor_produto" primaryKeyIndex="true" unique="false" >
+    <index id="IDX50" populated="true" UUID="33a200d5-d995-45e0-a7aa-619e84751605" clustered="false" name="pk_venda" physicalName="pk_venda" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC51" populated="true" UUID="52806494-7b13-41f0-aacc-fbbad6ac65fe" ascendingOrDescending="UNSPECIFIED" column-ref="COL46" name="cnpj_fornecedor" physicalName="cnpj_fornecedor" />
      <index-column id="IDC52" populated="true" UUID="0dc2200e-b06f-460b-815c-a38043e3e2ef" ascendingOrDescending="UNSPECIFIED" column-ref="COL47" name="cod_produto" physicalName="cod_produto" />
     </index>
